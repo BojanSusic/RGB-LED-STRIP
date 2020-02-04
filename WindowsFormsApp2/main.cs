@@ -20,12 +20,12 @@ namespace WindowsFormsApp2
         public Point tackaB = new Point(100, 0);
         private int x=1;
         public main()
-        {            
+        {
             InitializeComponent();
-           
-            
+
         }
-        
+       
+
         private void button1_Click_1(object sender, EventArgs e)
         {
 
@@ -151,6 +151,36 @@ namespace WindowsFormsApp2
             this.BackColor = Color.FromArgb(R, G, B);
         }
 
-       
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox5_MouseClick(object sender, MouseEventArgs e)
+        {
+            Bitmap imp = new Bitmap(pictureBox5.Image);
+            Color pixel = imp.GetPixel(e.X, e.Y);
+
+            if (pixel.B == 23 || pixel.G==254)
+                panel1.Hide();
+            else if (pixel.B == 21 || pixel.G==255)
+                panel1.Show();
+        }
+
+        private void pictureBox6_MouseClick(object sender, MouseEventArgs e)
+        {
+            Bitmap imp = new Bitmap(pictureBox6.Image);
+            Color pixel = imp.GetPixel(e.X, e.Y);
+
+            if (pixel.B == 21 || pixel.B == 255)
+                panel1.Hide();
+            else if (pixel.B == 20 || pixel.R == 255)
+                panel1.Show();
+        }
     }
 }
