@@ -133,8 +133,8 @@ namespace WindowsFormsApp2
             {
                 x = tackaB.X;
                 if (e.X >= 0 && e.X <= 255)
-                    tackaB.X = e.X;
-                //    tacka.Y = e.Y;
+                    tackaB.X = MousePosition.X;
+               
                 pictureBox3.Refresh();
 
             }
@@ -165,7 +165,6 @@ namespace WindowsFormsApp2
         {
             Bitmap imp = new Bitmap(pictureBox5.Image);
             Color pixel = imp.GetPixel(e.X, e.Y);
-
             if (pixel.B == 23 || pixel.G==254)
                 panel1.Hide();
             else if (pixel.B == 21 || pixel.G==255)
@@ -176,11 +175,56 @@ namespace WindowsFormsApp2
         {
             Bitmap imp = new Bitmap(pictureBox6.Image);
             Color pixel = imp.GetPixel(e.X, e.Y);
+            if (pixel.R == 21 || pixel.B == 255)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else if (pixel.R == 20 || pixel.R == 255) {
+                this.WindowState = FormWindowState.Minimized;
+                notifyIcon1.Icon = SystemIcons.Application;
+                this.ShowInTaskbar = false;
+                notifyIcon1.Visible = true;
 
-            if (pixel.B == 21 || pixel.B == 255)
-                panel1.Hide();
-            else if (pixel.B == 20 || pixel.R == 255)
-                panel1.Show();
+            }
+
         }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            if (this.WindowState == FormWindowState.Normal) {
+                this.ShowInTaskbar = true;
+                notifyIcon1.Visible = false;
+                Show();
+            }
+        }
+
+        
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right) {
+               // notifyIcon1.ContextMenu;
+            
+            }
+        }
+
+        
+        private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button==MouseButtons.Left) {
+              
+                
+                this.SetDesktopLocation(MousePosition.X, MousePosition.Y);
+                //????
+                
+               
+            }
+                       
+        }
+
+       
+
+        
     }
 }
