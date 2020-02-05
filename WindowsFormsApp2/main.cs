@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO.Ports;
 namespace WindowsFormsApp2
 {
     public partial class main : Form
@@ -18,14 +19,15 @@ namespace WindowsFormsApp2
         public Point tackaR=new Point(100,0);
         public Point tackaG = new Point(100, 0);
         public Point tackaB = new Point(100, 0);
-        private int x=1;
+        private SerialPort Arduino;
         private XmlDocument xmldoc = new XmlDocument();
-
+        private int x;
         public main()
         {
             InitializeComponent();
             set_Buttons_names();
-
+            Arduino = new SerialPort();
+            init();
 
 
         }
@@ -148,11 +150,8 @@ namespace WindowsFormsApp2
             textBox1.Text= "#"+R.ToString("X")+G.ToString("X")+B.ToString("X");
             this.BackColor = Color.FromArgb(R, G, B);
         }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
+        
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
@@ -195,26 +194,17 @@ namespace WindowsFormsApp2
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
             this.WindowState = FormWindowState.Normal;
             if (this.WindowState == FormWindowState.Normal) {
+                Show();
                 this.ShowInTaskbar = true;
                 notifyIcon1.Visible = false;
-                Show();
+               
                 
-            }
+           }
         }
 
-        
-
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right) {
-               // notifyIcon1.ContextMenu;
-            
-            }
-        }
-
-        
         private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button==MouseButtons.Left) {
@@ -451,6 +441,44 @@ namespace WindowsFormsApp2
         private void button038_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(38);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            send_To_Arduino();
+        }
+        private void send_To_Arduino() { 
+            
+            
+        
+        }
+      
+        private void init() {
+           // Arduino = new SerialPort();
+            Arduino.BaudRate = 9600; 
+            try
+                {
+                    Arduino.Open();
+                }
+                catch {
+                MessageBox.Show("IT IS NOT POSSIBLE TO OPEN THIS PORT");
+            }
+
+
+               
+        }
+
+        private void pictureBox9_MouseClick(object sender, MouseEventArgs e)
+        {
+            ArduinoEr com = new ArduinoEr();
+            com.ShowInTaskbar = false;
+            this.Enabled = false;
+            com.StartPosition = FormStartPosition.Manual;
+            com.SetDesktopLocation(this.Left + 190, this.Top + 180);
+            com.Show();
+            if (com.Created == false)
+                this.Enabled = true;
+            com.FormClosed += (o, args) => { if (com.get_text().Length > 0) { Arduino.Close(); Arduino.PortName = com.get_text(); init(); } this.Enabled = true; };
         }
     }
 }
