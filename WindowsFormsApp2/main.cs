@@ -13,7 +13,6 @@ namespace WindowsFormsApp2
     {
         
         private Image image = Image.FromFile("SLike/slider.png");
-        public int otvorena=0;
         public static string[] nazivi = new string[20];
         public Point tackaR=new Point(100,0);
         public Point tackaG = new Point(100, 0);
@@ -34,20 +33,13 @@ namespace WindowsFormsApp2
             save sav = new save();
             sav.ShowInTaskbar = false;
             this.Enabled = false;
-         
             sav.StartPosition=FormStartPosition.Manual;
             sav.SetDesktopLocation(this.Left+190, this.Top+180);
             sav.BackColor = Color.FromArgb(tackaR.X, tackaG.X, tackaB.X);
-            this.otvorena = sav.otvorena;
                 sav.Show();
-
-            
             if (sav.Created == false)
                 this.Enabled = true;
-
-            sav.FormClosed += (o, args) => { this.Enabled = true; };
-            
-
+            sav.FormClosed += (o, args) => { this.Enabled = true; };         
         }
 
         bool dozvolaR = false;
@@ -133,7 +125,7 @@ namespace WindowsFormsApp2
             {
                 x = tackaB.X;
                 if (e.X >= 0 && e.X <= 255)
-                    tackaB.X = MousePosition.X;
+                    tackaB.X = e.X;
                
                 pictureBox3.Refresh();
 
@@ -165,10 +157,16 @@ namespace WindowsFormsApp2
         {
             Bitmap imp = new Bitmap(pictureBox5.Image);
             Color pixel = imp.GetPixel(e.X, e.Y);
-            if (pixel.B == 23 || pixel.G==254)
+            if (pixel.B == 23 || pixel.G == 254)
+            {
                 panel1.Hide();
-            else if (pixel.B == 21 || pixel.G==255)
+                pictureBox4.Hide();
+            }
+            else if (pixel.B == 21 || pixel.G == 255)
+            {
                 panel1.Show();
+                pictureBox4.Show();
+            }
         }
 
         private void pictureBox6_MouseClick(object sender, MouseEventArgs e)
@@ -222,8 +220,71 @@ namespace WindowsFormsApp2
             }
                        
         }
+     
 
-       
+        private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
+        {
+            //MEMORY!!!
+            Bitmap imp = new Bitmap(pictureBox7.Image);
+            Color pixel = imp.GetPixel(e.X, e.Y);
+            if (pixel.B == 53 || pixel.G == 255)
+            {
+                Info info = new Info();
+                info.ShowInTaskbar = false;
+                this.Enabled = false;
+
+                info.StartPosition = FormStartPosition.Manual;
+                info.SetDesktopLocation(this.Left + 140, this.Top);
+                
+               
+                info.Show();
+
+
+                if (info.Created == false)
+                    this.Enabled = true;
+
+                info.FormClosed += (o, args) => { this.Enabled = true; };
+            }
+           
+        }
+
+        private void pictureBox8_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) {
+                Bitmap imp = new Bitmap(pictureBox8.Image);
+                if (e.X > 0 && e.Y > 0 && e.X<pictureBox8.Width && e.Y<pictureBox8.Height)
+                {
+                    Color pixel = imp.GetPixel(e.X, e.Y);
+                    // promjenaBoje(pixel.R, pixel.G, pixel.B);
+                    tackaR.X = pixel.R;
+                    tackaG.X = pixel.G;
+                    tackaB.X = pixel.B;
+                    pictureBox1.Refresh();
+                    pictureBox2.Refresh();
+                    pictureBox3.Refresh();
+                }
+
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox1.Text.Length == 7)
+                {
+                   
+                    tackaR.X = Convert.ToInt32(Convert.ToString(textBox1.Text[1]) + Convert.ToString(textBox1.Text[2]), 16);
+                    tackaG.X = Convert.ToInt32(Convert.ToString(textBox1.Text[3]) + Convert.ToString(textBox1.Text[4]), 16);
+                    tackaB.X = Convert.ToInt32(Convert.ToString(textBox1.Text[5]) + Convert.ToString(textBox1.Text[6]), 16);
+                    pictureBox1.Refresh();
+                    pictureBox2.Refresh();
+                    pictureBox3.Refresh();
+                }
+                else
+                    MessageBox.Show("Invalid input! Please check it!");
+            }
+        }
 
         
     }
