@@ -25,11 +25,12 @@ namespace WindowsFormsApp2
         public main()
         {
             InitializeComponent();
+           
             set_Buttons_names();
             Arduino = new SerialPort();
             init();
 
-
+          //  MessageBox.Show("SERIAL NAME IS COM1.\nIF YOU WANT TO CHANGE PORT CLICK ON EXCLAMATION");
         }
 
 
@@ -445,11 +446,17 @@ namespace WindowsFormsApp2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            send_To_Arduino();
+            send_To_Arduino(1);
         }
-        private void send_To_Arduino() { 
-            
-            
+        private void send_To_Arduino(int who) {
+
+            if (comboBox1.SelectedItem == "NONE" )
+            {
+                Arduino.WriteLine(tackaR.X.ToString("D3") + tackaG.X.ToString("D3") + tackaB.X.ToString("D3"));
+            }
+            else {
+                Arduino.WriteLine(comboBox1.SelectedItem.ToString());
+            }
         
         }
       
@@ -479,6 +486,12 @@ namespace WindowsFormsApp2
             if (com.Created == false)
                 this.Enabled = true;
             com.FormClosed += (o, args) => { if (com.get_text().Length > 0) { Arduino.Close(); Arduino.PortName = com.get_text(); init(); } this.Enabled = true; };
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            comboBox1.SelectedItem = "NONE";
+            send_To_Arduino(0);
         }
     }
 }
