@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <buttons>
-  <ime>naziv</ime>
-  <set>100100100</set>
+  <ime>PLAVA</ime>
+  <set>000001255</set>
   <ime>boja2</ime>
   <set>164193225</set>
   <ime>PINK</ime>
   <set>250144222</set>
   <ime>cyan</ime>
   <set>132212212</set>
-  <ime>NESTO12</ime>
+  <ime>NESTODRUGO</ime>
   <set>100100100</set>
-  <ime>EMPTY6</ime>
-  <set>100100100</set>
+  <ime>nazivsa</ime>
+  <set>145145145</set>
   <ime>Unesite naziv profila</ime>
   <set>100100100</set>
   <ime>EMPTY8</ime>
@@ -38,6 +38,6 @@
   <set>100100100</set>
   <ime>EMPTY19</ime>
   <set>100100100</set>
-  <ime>EMPTY20</ime>
-  <set>100100100</set>
+  <ime>BIJELA</ime>
+  <set>255255255</set>
 </buttons>

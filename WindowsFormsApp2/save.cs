@@ -72,12 +72,51 @@ namespace WindowsFormsApp2
             XmlElement ime = xmldoc.CreateElement("ime");
             ime.InnerText = textBox1.Text;
             XmlElement set = xmldoc.CreateElement("set");
-            set.InnerText = Convert.ToString(this.BackColor.R) + Convert.ToString(this.BackColor.G) + Convert.ToString(this.BackColor.B);
+            set.InnerText = napravi_Set();
             xmldoc.SelectSingleNode("buttons").ReplaceChild(ime, root.ChildNodes[broj - 3]);
             xmldoc.SelectSingleNode("buttons").ReplaceChild(set, root.ChildNodes[broj - 2]);
             xmldoc.Save("buttons.xml");
         }
+        public string napravi_Set() {
+            string setR;
+            string setG;
+            string setB;
+            string set;
+            if (Convert.ToString(this.BackColor.R).Length == 1) {
+                setR = "00" + Convert.ToString(this.BackColor.R);
+            }
+            else if (Convert.ToString(this.BackColor.R).Length == 2)
+            {
+                setR = "0" + Convert.ToString(this.BackColor.R);
+            }
+            else
+                setR = Convert.ToString(this.BackColor.R);
 
+            if (Convert.ToString(this.BackColor.G).Length == 1)
+            {
+                setG = "00" + Convert.ToString(this.BackColor.G);
+            }
+            else if (Convert.ToString(this.BackColor.G).Length == 2)
+            {
+                setG = "0" + Convert.ToString(this.BackColor.G);
+            }
+            else
+                setG = Convert.ToString(this.BackColor.B);
+            if (Convert.ToString(this.BackColor.B).Length == 1)
+            {
+                setB = "00" + Convert.ToString(this.BackColor.B);
+            }
+            else if (Convert.ToString(this.BackColor.B).Length == 2)
+            {
+                setB = "0" + Convert.ToString(this.BackColor.B);
+            }
+            else
+                setB = Convert.ToString(this.BackColor.B);
+
+
+            set = setR + setG + setB;
+            return set;
+        }
         public string boja(string ulazna_boja) {
 
             return ulazna_boja;

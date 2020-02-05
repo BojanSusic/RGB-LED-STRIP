@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 namespace WindowsFormsApp2
 {
     public partial class main : Form
@@ -18,12 +19,17 @@ namespace WindowsFormsApp2
         public Point tackaG = new Point(100, 0);
         public Point tackaB = new Point(100, 0);
         private int x=1;
+        private XmlDocument xmldoc = new XmlDocument();
+
         public main()
         {
             InitializeComponent();
+            set_Buttons_names();
+
+
 
         }
-       
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -39,7 +45,7 @@ namespace WindowsFormsApp2
                 sav.Show();
             if (sav.Created == false)
                 this.Enabled = true;
-            sav.FormClosed += (o, args) => { this.Enabled = true; };         
+            sav.FormClosed += (o, args) => { set_Buttons_names(); this.Enabled = true; };         
         }
 
         bool dozvolaR = false;
@@ -159,12 +165,12 @@ namespace WindowsFormsApp2
             Color pixel = imp.GetPixel(e.X, e.Y);
             if (pixel.B == 23 || pixel.G == 254)
             {
-                panel1.Hide();
+                panel1.SendToBack();
                 pictureBox4.Hide();
             }
             else if (pixel.B == 21 || pixel.G == 255)
             {
-                panel1.Show();
+                panel1.BringToFront();
                 pictureBox4.Show();
             }
         }
@@ -194,6 +200,7 @@ namespace WindowsFormsApp2
                 this.ShowInTaskbar = true;
                 notifyIcon1.Visible = false;
                 Show();
+                
             }
         }
 
@@ -262,6 +269,7 @@ namespace WindowsFormsApp2
                     pictureBox1.Refresh();
                     pictureBox2.Refresh();
                     pictureBox3.Refresh();
+
                 }
 
             }
@@ -286,6 +294,163 @@ namespace WindowsFormsApp2
             }
         }
 
-        
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void set_Buttons_names() {
+           
+            try
+            {
+                
+                xmldoc.Load("buttons.xml");
+                XmlNode root = xmldoc.DocumentElement;
+                button00.Text =root.ChildNodes[0].InnerText;
+                button02.Text = root.ChildNodes[2].InnerText;
+                button04.Text = root.ChildNodes[4].InnerText;
+                button06.Text = root.ChildNodes[6].InnerText;
+                button08.Text = root.ChildNodes[8].InnerText;
+                button010.Text = root.ChildNodes[10].InnerText;
+                button012.Text = root.ChildNodes[12].InnerText;
+                button014.Text = root.ChildNodes[14].InnerText;
+                button016.Text = root.ChildNodes[16].InnerText;
+                button018.Text = root.ChildNodes[18].InnerText;
+                button020.Text = root.ChildNodes[20].InnerText;
+                button022.Text = root.ChildNodes[22].InnerText;
+                button024.Text = root.ChildNodes[24].InnerText;
+                button26.Text = root.ChildNodes[26].InnerText;
+                button028.Text = root.ChildNodes[28].InnerText;
+                button030.Text = root.ChildNodes[30].InnerText;
+                button032.Text = root.ChildNodes[32].InnerText;
+                button034.Text = root.ChildNodes[34].InnerText;
+                button036.Text = root.ChildNodes[36].InnerText;
+                button038.Text = root.ChildNodes[38].InnerText;
+               
+            }
+            catch (Exception)
+            {
+                //PROMIJENITI U ENGLESKI
+                MessageBox.Show("DOSLO JE DO GRESKE PRILIKOM OTVARANJA FAJLA.\n MOGUCE DA FAJL NE POSTOJI ILI IMA POGRESNO IME!");
+            }
+
+
+        }
+
+        private void get_Buttons_sets(int btnnumber) {
+            xmldoc.Load("buttons.xml");
+            XmlNode root = xmldoc.DocumentElement;
+            
+            tackaR.X=Convert.ToInt32(Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[0]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[1]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[2]));
+            tackaG.X = Convert.ToInt32(Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[3]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[4]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[5]));
+            tackaB.X = Convert.ToInt32(Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[6]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[7]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[8]));
+            pictureBox1.Refresh();
+            pictureBox2.Refresh();
+            pictureBox3.Refresh();
+            promjenaBoje(tackaR.X, tackaG.X, tackaB.X);
+            
+        }
+
+        private void button00_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(0);
+        }
+
+        private void button02_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(2);
+
+        }
+
+        private void button04_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(4);
+
+        }
+
+        private void button06_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(6);
+
+        }
+
+        private void button08_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(8);
+        }
+
+        private void button010_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(10);
+        }
+
+        private void button012_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(12);
+        }
+
+        private void button014_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(14);
+        }
+
+        private void button016_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(16);
+        }
+
+        private void button018_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(18);
+        }
+
+        private void button020_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(20);
+        }
+
+        private void button022_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(22);
+        }
+
+        private void button024_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(24);
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(26);
+        }
+
+        private void button028_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(28);
+        }
+
+        private void button030_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(30);
+        }
+
+        private void button032_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(32);
+        }
+
+        private void button034_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(34);
+        }
+
+        private void button036_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(36);
+        }
+
+        private void button038_Click(object sender, EventArgs e)
+        {
+            get_Buttons_sets(38);
+        }
     }
 }
