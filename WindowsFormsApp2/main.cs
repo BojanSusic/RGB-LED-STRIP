@@ -13,7 +13,8 @@ namespace WindowsFormsApp2
 {
     public partial class main : Form
     {
-        
+       
+       
         private Image image = Image.FromFile("SLike/slider.png");
         public static string[] nazivi = new string[20];
         public Point tackaR=new Point(100,0);
@@ -74,12 +75,14 @@ namespace WindowsFormsApp2
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             dozvolaR = false;
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(image,tackaR.X,tackaR.Y,7,15);
             promjenaBoje(tackaR.X,tackaG.X,tackaB.X);
+
 
         }
         
@@ -103,6 +106,8 @@ namespace WindowsFormsApp2
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             dozvolaG = false;
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
@@ -126,6 +131,7 @@ namespace WindowsFormsApp2
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
         {
             dozvolaB = false;
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
         private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
@@ -148,7 +154,7 @@ namespace WindowsFormsApp2
         }
 
         private void promjenaBoje(int R,int G, int B) {
-            textBox1.Text= "#"+R.ToString("X")+G.ToString("X")+B.ToString("X");
+            
             this.BackColor = Color.FromArgb(R, G, B);
         }
         
@@ -276,6 +282,7 @@ namespace WindowsFormsApp2
                     tackaR.X = Convert.ToInt32(Convert.ToString(textBox1.Text[1]) + Convert.ToString(textBox1.Text[2]), 16);
                     tackaG.X = Convert.ToInt32(Convert.ToString(textBox1.Text[3]) + Convert.ToString(textBox1.Text[4]), 16);
                     tackaB.X = Convert.ToInt32(Convert.ToString(textBox1.Text[5]) + Convert.ToString(textBox1.Text[6]), 16);
+                    send_To_Arduino();
                     pictureBox1.Refresh();
                     pictureBox2.Refresh();
                     pictureBox3.Refresh();
@@ -446,16 +453,16 @@ namespace WindowsFormsApp2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            send_To_Arduino(1);
+            send_To_Arduino();
         }
-        private void send_To_Arduino(int who) {
+        private void send_To_Arduino() {
 
             if (comboBox1.SelectedItem == "NONE" )
             {
                 Arduino.WriteLine(tackaR.X.ToString("D3") + tackaG.X.ToString("D3") + tackaB.X.ToString("D3"));
             }
             else {
-                Arduino.WriteLine(comboBox1.SelectedItem.ToString());
+               // Arduino.WriteLine(comboBox1.SelectedItem.ToString());
             }
         
         }
@@ -490,8 +497,26 @@ namespace WindowsFormsApp2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            send_To_Arduino();
             comboBox1.SelectedItem = "NONE";
-            send_To_Arduino(0);
+           
+        }
+
+       
+
+        private void Item1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
