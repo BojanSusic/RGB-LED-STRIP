@@ -351,104 +351,143 @@ namespace WindowsFormsApp2
         private void button00_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(0);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button02_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(2);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
 
         }
 
         private void button04_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(4);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
 
         }
 
         private void button06_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(6);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
 
         }
 
         private void button08_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(8);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button010_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(10);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button012_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(12);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button014_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(14);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button016_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(16);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button018_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(18);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button020_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(20);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button022_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(22);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button024_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(24);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(26);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button028_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(28);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button030_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(30);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button032_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(32);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button034_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(34);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button036_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(36);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void button038_Click(object sender, EventArgs e)
         {
             get_Buttons_sets(38);
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
