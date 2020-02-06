@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
         public ArduinoEr()
         {
             InitializeComponent();
-            label1.Text = "PORT DOES NOT EXIST!\nPLEASE ENTER ARDUINO PORT NAME";
+            label1.Text = "PLEASE ENTER ARDUINO PORT NAME";
         }
         public int is_text_in() {
             return text_in;

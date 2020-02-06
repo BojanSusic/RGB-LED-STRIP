@@ -278,14 +278,22 @@ namespace WindowsFormsApp2
             {
                 if (textBox1.Text.Length == 7)
                 {
-                   
-                    tackaR.X = Convert.ToInt32(Convert.ToString(textBox1.Text[1]) + Convert.ToString(textBox1.Text[2]), 16);
-                    tackaG.X = Convert.ToInt32(Convert.ToString(textBox1.Text[3]) + Convert.ToString(textBox1.Text[4]), 16);
-                    tackaB.X = Convert.ToInt32(Convert.ToString(textBox1.Text[5]) + Convert.ToString(textBox1.Text[6]), 16);
-                    send_To_Arduino();
-                    pictureBox1.Refresh();
-                    pictureBox2.Refresh();
-                    pictureBox3.Refresh();
+
+                    try
+                    {
+                        tackaR.X = Convert.ToInt32(Convert.ToString(textBox1.Text[1]) + Convert.ToString(textBox1.Text[2]), 16);
+                        tackaG.X = Convert.ToInt32(Convert.ToString(textBox1.Text[3]) + Convert.ToString(textBox1.Text[4]), 16);
+                        tackaB.X = Convert.ToInt32(Convert.ToString(textBox1.Text[5]) + Convert.ToString(textBox1.Text[6]), 16);
+                        send_To_Arduino();
+                        pictureBox1.Refresh();
+                        pictureBox2.Refresh();
+                        pictureBox3.Refresh();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Invalid input please check it!");
+                    }
                 }
                 else
                     MessageBox.Show("Invalid input! Please check it!");
@@ -570,6 +578,27 @@ namespace WindowsFormsApp2
         {
             textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
 
+        }
+
+        private void pictureBox8_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Bitmap imp = new Bitmap(pictureBox8.Image);
+                if (e.X > 0 && e.Y > 0 && e.X < pictureBox8.Width && e.Y < pictureBox8.Height)
+                {
+                    Color pixel = imp.GetPixel(e.X, e.Y);
+                    // promjenaBoje(pixel.R, pixel.G, pixel.B);
+                    tackaR.X = pixel.R;
+                    tackaG.X = pixel.G;
+                    tackaB.X = pixel.B;
+                    pictureBox1.Refresh();
+                    pictureBox2.Refresh();
+                    pictureBox3.Refresh();
+
+                }
+
+            }
         }
     }
 }
