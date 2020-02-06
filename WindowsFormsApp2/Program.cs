@@ -19,8 +19,8 @@ namespace WindowsFormsApp2
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-              Application.Run(new main());
+           Application.Run(new Form1());
+             Application.Run(new main());
            
             //Application.Run(new ArduinoEr());
             // Application.Run(new save());
