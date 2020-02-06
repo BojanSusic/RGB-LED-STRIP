@@ -461,10 +461,18 @@ namespace WindowsFormsApp2
             {
                 Arduino.WriteLine(tackaR.X.ToString("D3") + tackaG.X.ToString("D3") + tackaB.X.ToString("D3"));
             }
-            else {
-               // Arduino.WriteLine(comboBox1.SelectedItem.ToString());
+            else if(comboBox1.SelectedItem=="FADE") {
+                Arduino.WriteLine("FADE00000");
             }
-        
+            else if (comboBox1.SelectedItem == "RAINBOW")
+            {
+                Arduino.WriteLine("RAINBOW00");
+            }
+            else if (comboBox1.SelectedItem == "BLINK")
+            {
+                Arduino.WriteLine("BLINK0000");
+            }
+
         }
       
         private void init() {
@@ -517,6 +525,12 @@ namespace WindowsFormsApp2
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox8_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+
         }
     }
 }
