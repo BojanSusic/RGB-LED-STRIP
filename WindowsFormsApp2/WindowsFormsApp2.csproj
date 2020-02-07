@@ -120,6 +120,8 @@
   <ItemGroup>
     <None Include="Resources\Untitled-4.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\untitled_5_bAf_icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

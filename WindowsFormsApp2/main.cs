@@ -193,6 +193,7 @@ namespace WindowsFormsApp2
                 this.WindowState = FormWindowState.Minimized;
                 notifyIcon1.Icon = SystemIcons.Application;
                 this.ShowInTaskbar = false;
+               // notifyIcon1.Icon = new Icon("WindowsFormsApp2Resources\\untitled_5_bAf_icon.ico");
                 notifyIcon1.Visible = true;
 
             }
