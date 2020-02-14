@@ -17,14 +17,17 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Sets Form border to none.
+        /// </summary>
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.None;
-           
-          
-            
+            this.FormBorderStyle = FormBorderStyle.None;  
         }
 
+        /// <summary>
+        /// Starts timer, waits and then closes form.
+        /// </summary>
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Start();

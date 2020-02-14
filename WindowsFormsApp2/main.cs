@@ -30,16 +30,12 @@ namespace WindowsFormsApp2
             set_Buttons_names();
             Arduino = new SerialPort();
             init();
-
-          //  MessageBox.Show("SERIAL NAME IS COM1.\nIF YOU WANT TO CHANGE PORT CLICK ON EXCLAMATION");
         }
 
 
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            //OTVARA FORMU ZA UNOS I DISABLE-UJE TRENUTNU FORMU 
-            //A NAKON STO SE FORMA ZA UNOS ZATVOR IPET JE ENABLE-UJE
             save sav = new save();
             sav.ShowInTaskbar = false;
             this.Enabled = false;
@@ -285,7 +281,10 @@ namespace WindowsFormsApp2
                         tackaR.X = Convert.ToInt32(Convert.ToString(textBox1.Text[1]) + Convert.ToString(textBox1.Text[2]), 16);
                         tackaG.X = Convert.ToInt32(Convert.ToString(textBox1.Text[3]) + Convert.ToString(textBox1.Text[4]), 16);
                         tackaB.X = Convert.ToInt32(Convert.ToString(textBox1.Text[5]) + Convert.ToString(textBox1.Text[6]), 16);
-                        send_To_Arduino();
+                        if(Arduino.IsOpen)
+                            send_To_Arduino();
+                        else
+                            MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
                         pictureBox1.Refresh();
                         pictureBox2.Refresh();
                         pictureBox3.Refresh();
@@ -501,7 +500,10 @@ namespace WindowsFormsApp2
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            send_To_Arduino();
+            if(Arduino.IsOpen)
+                send_To_Arduino();
+            else
+                MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
         }
         private void send_To_Arduino() {
 
@@ -548,14 +550,18 @@ namespace WindowsFormsApp2
             com.Show();
             if (com.Created == false)
                 this.Enabled = true;
-            com.FormClosed += (o, args) => { if (com.get_text().Length > 0) { Arduino.Close(); Arduino.PortName = com.get_text(); init(); } this.Enabled = true; };
+            com.FormClosed += (o, args) => { if (com.get_Text().Length > 0) { Arduino.Close(); Arduino.PortName = com.get_Text(); init(); } this.Enabled = true; };
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            send_To_Arduino();
-            comboBox1.SelectedItem = "NONE";
-           
+            if (Arduino.IsOpen)
+            {
+                send_To_Arduino();
+                comboBox1.SelectedItem = "NONE";
+            }
+            else
+                MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
         }
 
        
