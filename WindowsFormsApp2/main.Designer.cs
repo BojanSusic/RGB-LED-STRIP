@@ -300,6 +300,8 @@
             // 
             // notifyIcon1
             // 
+            this.notifyIcon1.BalloonTipText = "Your app is here!";
+            this.notifyIcon1.BalloonTipTitle = "RGB LED STRIP";
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "RGB LED STRIP";

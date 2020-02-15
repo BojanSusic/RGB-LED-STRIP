@@ -10,10 +10,14 @@ namespace WindowsFormsApp2
     {
         
         /// <summary>
-        /// The main entry point for the application.
+        /// The main entry point for the application
+        /// <c>save</c> is form for saving seted color.
+        /// <c>main</c> is main form for this program.
+        /// <c>Info</c> is form about this program.
+        /// <c>Form1</c> is load screen.
+        /// <c>ArduinoEr</c>form for setting serial COM port.
         /// </summary>
         [STAThread]
-       
         static void Main()
         {
             
@@ -23,7 +27,7 @@ namespace WindowsFormsApp2
              Application.Run(new main());
            
             //Application.Run(new ArduinoEr());
-            // Application.Run(new save());
+            // Application.Run(new save());           
             // Application.Run(new Info());
 
 

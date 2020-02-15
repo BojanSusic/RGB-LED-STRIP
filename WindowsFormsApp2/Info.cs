@@ -12,6 +12,9 @@ namespace WindowsFormsApp2
 {
     public partial class Info : Form
     {
+        /// <summary>
+        /// About application.
+        /// </summary>
         public Info()
         {
             InitializeComponent();

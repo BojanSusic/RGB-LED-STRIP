@@ -6,16 +6,24 @@ namespace WindowsFormsApp2
 {
     public partial class save : Form
     {
-
+        
         public int otvorena=1;
+        
         /// <summary>
-        /// Opens xml file "buttons.xml" and all nodes with name "ime" adds them to "listBox2".
-        /// If it is not possible to open xml file MessageBox will show a message.
+        /// Class used for saving a preset profile.
         /// </summary>
         public save()
         {
             InitializeComponent();
+            set_Listbox_Items();
             
+        }
+
+        /// <summary>
+        /// Opens xml file "buttons.xml" and all nodes with name "ime" adds them to "listBox2".
+        /// If it is not possible to open xml file MessageBox will show a message.
+        /// </summary>
+        private void set_Listbox_Items() {
             XmlTextReader xmlR = new XmlTextReader("buttons.xml");
             try
             {
@@ -28,9 +36,11 @@ namespace WindowsFormsApp2
                 } while (xmlR.Read());
                 xmlR.Close();
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 MessageBox.Show("Error opening file\nWrong name or the file does not exist");
             }
+
         }
 
         private void save_Load(object sender, EventArgs e)
@@ -128,7 +138,9 @@ namespace WindowsFormsApp2
             return setR + setG + setB;
         }
 
-
+        /// <summary>
+        /// Gets color.
+        /// </summary>
         public string boja(string ulazna_boja) {
             return ulazna_boja;
         }

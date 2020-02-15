@@ -13,6 +13,10 @@ namespace WindowsFormsApp2
     public partial class ArduinoEr : Form
     {
         int text_in=0;
+
+        /// <summary>
+        /// Set arduino port name.
+        /// </summary>
         public ArduinoEr()
         {
             InitializeComponent();

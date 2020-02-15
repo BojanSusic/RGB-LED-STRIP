@@ -12,6 +12,9 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Loading screen.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
