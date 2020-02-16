@@ -123,7 +123,8 @@ namespace WindowsFormsApp2
                 setG = "0" + Convert.ToString(this.BackColor.G);
             }
             else
-                setG = Convert.ToString(this.BackColor.B);
+                setG = Convert.ToString(this.BackColor.G);
+
             if (Convert.ToString(this.BackColor.B).Length == 1)
             {
                 setB = "00" + Convert.ToString(this.BackColor.B);

@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <buttons>
-  <ime>PLAVA</ime>
-  <set>000001255</set>
-  <ime>boja2</ime>
-  <set>164193225</set>
-  <ime>PINK</ime>
-  <set>250144222</set>
-  <ime>cyan</ime>
-  <set>132212212</set>
-  <ime>NESTODRUGO</ime>
+  <ime>EMPTY1</ime>
   <set>100100100</set>
-  <ime>nazivsa</ime>
-  <set>145145145</set>
-  <ime>Une</ime>
-  <set>000134134</set>
-  <ime>plava</ime>
-  <set>132212212</set>
+  <ime>EMPTY2</ime>
+  <set>100100100</set>
+  <ime>EMPTY3</ime>
+  <set>100100100</set>
+  <ime>EMPTY4</ime>
+  <set>100100100</set>
+  <ime>EMPTY5</ime>
+  <set>100100100</set>
+  <ime>EMPTY6</ime>
+  <set>100100100</set>
+  <ime>EMPTY7</ime>
+  <set>100100100</set>
+  <ime>EMPTY8</ime>
+  <set>100100100</set>
   <ime>EMPTY9</ime>
   <set>100100100</set>
   <ime>EMPTY10</ime>
   <set>100100100</set>
-  <ime>lazi</ime>
-  <set>189039250</set>
+  <ime>EMPTY11</ime>
+  <set>100100100</set>
   <ime>EMPTY12</ime>
   <set>100100100</set>
   <ime>EMPTY13</ime>
@@ -36,8 +36,8 @@
   <set>100100100</set>
   <ime>EMPTY18</ime>
   <set>100100100</set>
-  <ime>ljubicasta</ime>
-  <set>190180180</set>
-  <ime>BIJELA</ime>
-  <set>255255255</set>
+  <ime>EMPTY19</ime>
+  <set>100100100</set>
+  <ime>EMPTY20</ime>
+  <set>100100100</set>
 </buttons>

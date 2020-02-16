@@ -257,6 +257,7 @@ namespace WindowsFormsApp2
                 notifyIcon1.Icon = SystemIcons.Application;
                 this.ShowInTaskbar = false;
                 notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(3000);
             }
         }
 
