@@ -686,7 +686,9 @@ namespace WindowsFormsApp2
         /// </summary>
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
         }
 
         /// <summary>
