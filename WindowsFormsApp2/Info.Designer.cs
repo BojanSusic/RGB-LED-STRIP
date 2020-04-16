@@ -29,101 +29,101 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Info));
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblAbout = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblText = new System.Windows.Forms.Label();
+            this.llMail = new System.Windows.Forms.LinkLabel();
+            this.lblGit = new System.Windows.Forms.Label();
+            this.pbGitHub = new System.Windows.Forms.PictureBox();
+            this.lblNotif = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGitHub)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblAbout
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(149, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ABOUT";
+            this.lblAbout.AutoSize = true;
+            this.lblAbout.Font = new System.Drawing.Font("MV Boli", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbout.ForeColor = System.Drawing.Color.Lime;
+            this.lblAbout.Location = new System.Drawing.Point(149, 61);
+            this.lblAbout.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblAbout.Name = "lblAbout";
+            this.lblAbout.Size = new System.Drawing.Size(65, 20);
+            this.lblAbout.TabIndex = 0;
+            this.lblAbout.Text = "ABOUT";
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(150, 481);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "CLOSE";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Lime;
+            this.btnClose.Location = new System.Drawing.Point(150, 481);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(76, 37);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "CLOSE";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClick_Click);
             // 
-            // label2
+            // lblText
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(31, 126);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(319, 119);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "This program was made by Bojan Susic,\r\nstudent of Electrotechnical University in\r" +
+            this.lblText.AutoSize = true;
+            this.lblText.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblText.ForeColor = System.Drawing.Color.Lime;
+            this.lblText.Location = new System.Drawing.Point(23, 126);
+            this.lblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(319, 119);
+            this.lblText.TabIndex = 2;
+            this.lblText.Text = "This program was made by Bojan Susic,\r\nstudent of Electrotechnical University in\r" +
     "\nEast Sarajevo (Bosnia and Herzegovina)\r\n\r\nThis is version 1_0 finished at 06/02" +
     "/2020\r\n\r\nmy email:";
             // 
-            // linkLabel1
+            // llMail
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.SkyBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(112, 228);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(164, 17);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "bojansusic8@gmail.com";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llMail.AutoSize = true;
+            this.llMail.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llMail.LinkColor = System.Drawing.Color.SkyBlue;
+            this.llMail.Location = new System.Drawing.Point(112, 228);
+            this.llMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llMail.Name = "llMail";
+            this.llMail.Size = new System.Drawing.Size(164, 17);
+            this.llMail.TabIndex = 3;
+            this.llMail.TabStop = true;
+            this.llMail.Text = "bojansusic8@gmail.com";
+            this.llMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llMail_LinkClicked);
             // 
-            // label3
+            // lblGit
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(41, 308);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(278, 21);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "You can find this project here:";
+            this.lblGit.AutoSize = true;
+            this.lblGit.ForeColor = System.Drawing.Color.Lime;
+            this.lblGit.Location = new System.Drawing.Point(41, 308);
+            this.lblGit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGit.Name = "lblGit";
+            this.lblGit.Size = new System.Drawing.Size(278, 21);
+            this.lblGit.TabIndex = 4;
+            this.lblGit.Text = "You can find this project here:";
             // 
-            // pictureBox1
+            // pbGitHub
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 332);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 100);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbGitHub.Image = ((System.Drawing.Image)(resources.GetObject("pbGitHub.Image")));
+            this.pbGitHub.Location = new System.Drawing.Point(45, 332);
+            this.pbGitHub.Name = "pbGitHub";
+            this.pbGitHub.Size = new System.Drawing.Size(274, 100);
+            this.pbGitHub.TabIndex = 5;
+            this.pbGitHub.TabStop = false;
+            this.pbGitHub.Click += new System.EventHandler(this.pbGitHub_Click);
             // 
-            // label4
+            // lblNotif
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MV Boli", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(126, 245);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "copied to clipboard";
+            this.lblNotif.AutoSize = true;
+            this.lblNotif.Font = new System.Drawing.Font("MV Boli", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotif.ForeColor = System.Drawing.Color.Lime;
+            this.lblNotif.Location = new System.Drawing.Point(126, 245);
+            this.lblNotif.Name = "lblNotif";
+            this.lblNotif.Size = new System.Drawing.Size(125, 16);
+            this.lblNotif.TabIndex = 6;
+            this.lblNotif.Text = "copied to clipboard";
             // 
             // Info
             // 
@@ -132,19 +132,19 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(375, 558);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNotif);
+            this.Controls.Add(this.pbGitHub);
+            this.Controls.Add(this.lblGit);
+            this.Controls.Add(this.llMail);
+            this.Controls.Add(this.lblText);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.lblAbout);
             this.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Info";
             this.Text = "Info";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGitHub)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,12 +152,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblAbout;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblText;
+        private System.Windows.Forms.LinkLabel llMail;
+        private System.Windows.Forms.Label lblGit;
+        private System.Windows.Forms.PictureBox pbGitHub;
+        private System.Windows.Forms.Label lblNotif;
     }
 }

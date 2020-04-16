@@ -47,31 +47,31 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button038 = new System.Windows.Forms.Button();
-            this.button018 = new System.Windows.Forms.Button();
-            this.button036 = new System.Windows.Forms.Button();
-            this.button016 = new System.Windows.Forms.Button();
-            this.button034 = new System.Windows.Forms.Button();
-            this.button014 = new System.Windows.Forms.Button();
-            this.button032 = new System.Windows.Forms.Button();
-            this.button012 = new System.Windows.Forms.Button();
-            this.button030 = new System.Windows.Forms.Button();
-            this.button010 = new System.Windows.Forms.Button();
-            this.button028 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button08 = new System.Windows.Forms.Button();
-            this.button024 = new System.Windows.Forms.Button();
-            this.button06 = new System.Windows.Forms.Button();
-            this.button022 = new System.Windows.Forms.Button();
-            this.button04 = new System.Windows.Forms.Button();
-            this.button020 = new System.Windows.Forms.Button();
-            this.button02 = new System.Windows.Forms.Button();
-            this.button00 = new System.Windows.Forms.Button();
+            this.btnProf20 = new System.Windows.Forms.Button();
+            this.btnProf10 = new System.Windows.Forms.Button();
+            this.btnProf19 = new System.Windows.Forms.Button();
+            this.btnProf9 = new System.Windows.Forms.Button();
+            this.btnProf18 = new System.Windows.Forms.Button();
+            this.btnProf8 = new System.Windows.Forms.Button();
+            this.btnProf17 = new System.Windows.Forms.Button();
+            this.btnProf7 = new System.Windows.Forms.Button();
+            this.btnProf16 = new System.Windows.Forms.Button();
+            this.btnProf6 = new System.Windows.Forms.Button();
+            this.btnProf15 = new System.Windows.Forms.Button();
+            this.btnProf14 = new System.Windows.Forms.Button();
+            this.btnProf5 = new System.Windows.Forms.Button();
+            this.btnProf13 = new System.Windows.Forms.Button();
+            this.btnProf4 = new System.Windows.Forms.Button();
+            this.btnProf12 = new System.Windows.Forms.Button();
+            this.btnProf3 = new System.Windows.Forms.Button();
+            this.btnProf11 = new System.Windows.Forms.Button();
+            this.btnProf2 = new System.Windows.Forms.Button();
+            this.btnProf1 = new System.Windows.Forms.Button();
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,9 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox4
@@ -243,7 +243,7 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(12, 106);
+            this.panel1.Location = new System.Drawing.Point(12, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(646, 428);
             this.panel1.TabIndex = 10;
@@ -307,17 +307,325 @@
             this.notifyIcon1.Text = "RGB LED STRIP";
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
-            // contextMenuStrip1
+            // pictureBox7
             // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(79, 48);
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(675, 550);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox7.TabIndex = 13;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox7_MouseClick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.panel2.Controls.Add(this.btnProf20);
+            this.panel2.Controls.Add(this.btnProf10);
+            this.panel2.Controls.Add(this.btnProf19);
+            this.panel2.Controls.Add(this.btnProf9);
+            this.panel2.Controls.Add(this.btnProf18);
+            this.panel2.Controls.Add(this.btnProf8);
+            this.panel2.Controls.Add(this.btnProf17);
+            this.panel2.Controls.Add(this.btnProf7);
+            this.panel2.Controls.Add(this.btnProf16);
+            this.panel2.Controls.Add(this.btnProf6);
+            this.panel2.Controls.Add(this.btnProf15);
+            this.panel2.Controls.Add(this.btnProf14);
+            this.panel2.Controls.Add(this.btnProf5);
+            this.panel2.Controls.Add(this.btnProf13);
+            this.panel2.Controls.Add(this.btnProf4);
+            this.panel2.Controls.Add(this.btnProf12);
+            this.panel2.Controls.Add(this.btnProf3);
+            this.panel2.Controls.Add(this.btnProf11);
+            this.panel2.Controls.Add(this.btnProf2);
+            this.panel2.Controls.Add(this.btnProf1);
+            this.panel2.Location = new System.Drawing.Point(23, 109);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(596, 428);
+            this.panel2.TabIndex = 14;
+            // 
+            // btnProf20
+            // 
+            this.btnProf20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf20.BackgroundImage")));
+            this.btnProf20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf20.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf20.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf20.Location = new System.Drawing.Point(334, 379);
+            this.btnProf20.Name = "btnProf20";
+            this.btnProf20.Size = new System.Drawing.Size(254, 35);
+            this.btnProf20.TabIndex = 0;
+            this.btnProf20.Text = "button2";
+            this.btnProf20.UseVisualStyleBackColor = true;
+            this.btnProf20.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf10
+            // 
+            this.btnProf10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf10.BackgroundImage")));
+            this.btnProf10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf10.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf10.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf10.Location = new System.Drawing.Point(25, 379);
+            this.btnProf10.Name = "btnProf10";
+            this.btnProf10.Size = new System.Drawing.Size(254, 35);
+            this.btnProf10.TabIndex = 0;
+            this.btnProf10.Text = "button2";
+            this.btnProf10.UseVisualStyleBackColor = true;
+            this.btnProf10.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf19
+            // 
+            this.btnProf19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf19.BackgroundImage")));
+            this.btnProf19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf19.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf19.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf19.Location = new System.Drawing.Point(334, 338);
+            this.btnProf19.Name = "btnProf19";
+            this.btnProf19.Size = new System.Drawing.Size(254, 35);
+            this.btnProf19.TabIndex = 0;
+            this.btnProf19.Text = "button2";
+            this.btnProf19.UseVisualStyleBackColor = true;
+            this.btnProf19.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf9
+            // 
+            this.btnProf9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf9.BackgroundImage")));
+            this.btnProf9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf9.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf9.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf9.Location = new System.Drawing.Point(25, 338);
+            this.btnProf9.Name = "btnProf9";
+            this.btnProf9.Size = new System.Drawing.Size(254, 35);
+            this.btnProf9.TabIndex = 0;
+            this.btnProf9.Text = "button2";
+            this.btnProf9.UseVisualStyleBackColor = true;
+            this.btnProf9.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf18
+            // 
+            this.btnProf18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf18.BackgroundImage")));
+            this.btnProf18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf18.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf18.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf18.Location = new System.Drawing.Point(334, 297);
+            this.btnProf18.Name = "btnProf18";
+            this.btnProf18.Size = new System.Drawing.Size(254, 35);
+            this.btnProf18.TabIndex = 0;
+            this.btnProf18.Text = "button2";
+            this.btnProf18.UseVisualStyleBackColor = true;
+            this.btnProf18.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf8
+            // 
+            this.btnProf8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf8.BackgroundImage")));
+            this.btnProf8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf8.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf8.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf8.Location = new System.Drawing.Point(25, 297);
+            this.btnProf8.Name = "btnProf8";
+            this.btnProf8.Size = new System.Drawing.Size(254, 35);
+            this.btnProf8.TabIndex = 0;
+            this.btnProf8.Text = "button2";
+            this.btnProf8.UseVisualStyleBackColor = true;
+            this.btnProf8.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf17
+            // 
+            this.btnProf17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf17.BackgroundImage")));
+            this.btnProf17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf17.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf17.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf17.Location = new System.Drawing.Point(334, 256);
+            this.btnProf17.Name = "btnProf17";
+            this.btnProf17.Size = new System.Drawing.Size(254, 35);
+            this.btnProf17.TabIndex = 0;
+            this.btnProf17.Text = "button2";
+            this.btnProf17.UseVisualStyleBackColor = true;
+            this.btnProf17.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf7
+            // 
+            this.btnProf7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf7.BackgroundImage")));
+            this.btnProf7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf7.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf7.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf7.Location = new System.Drawing.Point(25, 256);
+            this.btnProf7.Name = "btnProf7";
+            this.btnProf7.Size = new System.Drawing.Size(254, 35);
+            this.btnProf7.TabIndex = 0;
+            this.btnProf7.Text = "button2";
+            this.btnProf7.UseVisualStyleBackColor = true;
+            this.btnProf7.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf16
+            // 
+            this.btnProf16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf16.BackgroundImage")));
+            this.btnProf16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf16.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf16.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf16.Location = new System.Drawing.Point(334, 215);
+            this.btnProf16.Name = "btnProf16";
+            this.btnProf16.Size = new System.Drawing.Size(254, 35);
+            this.btnProf16.TabIndex = 0;
+            this.btnProf16.Text = "button2";
+            this.btnProf16.UseVisualStyleBackColor = true;
+            this.btnProf16.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf6
+            // 
+            this.btnProf6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf6.BackgroundImage")));
+            this.btnProf6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf6.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf6.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf6.Location = new System.Drawing.Point(25, 215);
+            this.btnProf6.Name = "btnProf6";
+            this.btnProf6.Size = new System.Drawing.Size(254, 35);
+            this.btnProf6.TabIndex = 0;
+            this.btnProf6.Text = "button2";
+            this.btnProf6.UseVisualStyleBackColor = true;
+            this.btnProf6.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf15
+            // 
+            this.btnProf15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf15.BackgroundImage")));
+            this.btnProf15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf15.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf15.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf15.Location = new System.Drawing.Point(334, 174);
+            this.btnProf15.Name = "btnProf15";
+            this.btnProf15.Size = new System.Drawing.Size(254, 35);
+            this.btnProf15.TabIndex = 0;
+            this.btnProf15.Text = "button2";
+            this.btnProf15.UseVisualStyleBackColor = true;
+            this.btnProf15.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf14
+            // 
+            this.btnProf14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf14.BackgroundImage")));
+            this.btnProf14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf14.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf14.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf14.Location = new System.Drawing.Point(334, 133);
+            this.btnProf14.Name = "btnProf14";
+            this.btnProf14.Size = new System.Drawing.Size(254, 35);
+            this.btnProf14.TabIndex = 0;
+            this.btnProf14.Text = "button2";
+            this.btnProf14.UseVisualStyleBackColor = true;
+            this.btnProf14.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf5
+            // 
+            this.btnProf5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf5.BackgroundImage")));
+            this.btnProf5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf5.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf5.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf5.Location = new System.Drawing.Point(25, 174);
+            this.btnProf5.Name = "btnProf5";
+            this.btnProf5.Size = new System.Drawing.Size(254, 35);
+            this.btnProf5.TabIndex = 0;
+            this.btnProf5.Text = "button2";
+            this.btnProf5.UseVisualStyleBackColor = true;
+            this.btnProf5.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf13
+            // 
+            this.btnProf13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf13.BackgroundImage")));
+            this.btnProf13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf13.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf13.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf13.Location = new System.Drawing.Point(334, 92);
+            this.btnProf13.Name = "btnProf13";
+            this.btnProf13.Size = new System.Drawing.Size(254, 35);
+            this.btnProf13.TabIndex = 0;
+            this.btnProf13.Text = "button2";
+            this.btnProf13.UseVisualStyleBackColor = true;
+            this.btnProf13.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf4
+            // 
+            this.btnProf4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf4.BackgroundImage")));
+            this.btnProf4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf4.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf4.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf4.Location = new System.Drawing.Point(25, 133);
+            this.btnProf4.Name = "btnProf4";
+            this.btnProf4.Size = new System.Drawing.Size(254, 35);
+            this.btnProf4.TabIndex = 0;
+            this.btnProf4.Text = "button2";
+            this.btnProf4.UseVisualStyleBackColor = true;
+            this.btnProf4.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf12
+            // 
+            this.btnProf12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf12.BackgroundImage")));
+            this.btnProf12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf12.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf12.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf12.Location = new System.Drawing.Point(334, 51);
+            this.btnProf12.Name = "btnProf12";
+            this.btnProf12.Size = new System.Drawing.Size(254, 35);
+            this.btnProf12.TabIndex = 0;
+            this.btnProf12.Text = "button2";
+            this.btnProf12.UseVisualStyleBackColor = true;
+            this.btnProf12.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf3
+            // 
+            this.btnProf3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf3.BackgroundImage")));
+            this.btnProf3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf3.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf3.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf3.Location = new System.Drawing.Point(25, 92);
+            this.btnProf3.Name = "btnProf3";
+            this.btnProf3.Size = new System.Drawing.Size(254, 35);
+            this.btnProf3.TabIndex = 0;
+            this.btnProf3.Text = "button2";
+            this.btnProf3.UseVisualStyleBackColor = true;
+            this.btnProf3.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf11
+            // 
+            this.btnProf11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf11.BackgroundImage")));
+            this.btnProf11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf11.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf11.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf11.Location = new System.Drawing.Point(334, 10);
+            this.btnProf11.Name = "btnProf11";
+            this.btnProf11.Size = new System.Drawing.Size(254, 35);
+            this.btnProf11.TabIndex = 0;
+            this.btnProf11.Text = "button2";
+            this.btnProf11.UseVisualStyleBackColor = true;
+            this.btnProf11.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf2
+            // 
+            this.btnProf2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf2.BackgroundImage")));
+            this.btnProf2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf2.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf2.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf2.Location = new System.Drawing.Point(25, 51);
+            this.btnProf2.Name = "btnProf2";
+            this.btnProf2.Size = new System.Drawing.Size(254, 35);
+            this.btnProf2.TabIndex = 0;
+            this.btnProf2.Text = "button2";
+            this.btnProf2.UseVisualStyleBackColor = true;
+            this.btnProf2.Click += new System.EventHandler(this.button00_Click);
+            // 
+            // btnProf1
+            // 
+            this.btnProf1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProf1.BackgroundImage")));
+            this.btnProf1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProf1.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProf1.ForeColor = System.Drawing.Color.Lime;
+            this.btnProf1.Location = new System.Drawing.Point(25, 10);
+            this.btnProf1.Name = "btnProf1";
+            this.btnProf1.Size = new System.Drawing.Size(254, 35);
+            this.btnProf1.TabIndex = 0;
+            this.btnProf1.Tag = "";
+            this.btnProf1.Text = "button1";
+            this.btnProf1.UseVisualStyleBackColor = true;
+            this.btnProf1.Click += new System.EventHandler(this.button00_Click);
             // 
             // showToolStripMenuItem
             // 
@@ -333,324 +641,17 @@
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
-            // pictureBox7
+            // contextMenuStrip1
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(675, 550);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox7.TabIndex = 13;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox7_MouseClick);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.panel2.Controls.Add(this.button038);
-            this.panel2.Controls.Add(this.button018);
-            this.panel2.Controls.Add(this.button036);
-            this.panel2.Controls.Add(this.button016);
-            this.panel2.Controls.Add(this.button034);
-            this.panel2.Controls.Add(this.button014);
-            this.panel2.Controls.Add(this.button032);
-            this.panel2.Controls.Add(this.button012);
-            this.panel2.Controls.Add(this.button030);
-            this.panel2.Controls.Add(this.button010);
-            this.panel2.Controls.Add(this.button028);
-            this.panel2.Controls.Add(this.button26);
-            this.panel2.Controls.Add(this.button08);
-            this.panel2.Controls.Add(this.button024);
-            this.panel2.Controls.Add(this.button06);
-            this.panel2.Controls.Add(this.button022);
-            this.panel2.Controls.Add(this.button04);
-            this.panel2.Controls.Add(this.button020);
-            this.panel2.Controls.Add(this.button02);
-            this.panel2.Controls.Add(this.button00);
-            this.panel2.Location = new System.Drawing.Point(23, 109);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(596, 428);
-            this.panel2.TabIndex = 14;
-            // 
-            // button038
-            // 
-            this.button038.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button038.BackgroundImage")));
-            this.button038.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button038.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button038.ForeColor = System.Drawing.Color.Lime;
-            this.button038.Location = new System.Drawing.Point(334, 379);
-            this.button038.Name = "button038";
-            this.button038.Size = new System.Drawing.Size(254, 35);
-            this.button038.TabIndex = 0;
-            this.button038.Text = "button2";
-            this.button038.UseVisualStyleBackColor = true;
-            this.button038.Click += new System.EventHandler(this.button038_Click);
-            // 
-            // button018
-            // 
-            this.button018.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button018.BackgroundImage")));
-            this.button018.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button018.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button018.ForeColor = System.Drawing.Color.Lime;
-            this.button018.Location = new System.Drawing.Point(25, 379);
-            this.button018.Name = "button018";
-            this.button018.Size = new System.Drawing.Size(254, 35);
-            this.button018.TabIndex = 0;
-            this.button018.Text = "button2";
-            this.button018.UseVisualStyleBackColor = true;
-            this.button018.Click += new System.EventHandler(this.button018_Click);
-            // 
-            // button036
-            // 
-            this.button036.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button036.BackgroundImage")));
-            this.button036.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button036.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button036.ForeColor = System.Drawing.Color.Lime;
-            this.button036.Location = new System.Drawing.Point(334, 338);
-            this.button036.Name = "button036";
-            this.button036.Size = new System.Drawing.Size(254, 35);
-            this.button036.TabIndex = 0;
-            this.button036.Text = "button2";
-            this.button036.UseVisualStyleBackColor = true;
-            this.button036.Click += new System.EventHandler(this.button036_Click);
-            // 
-            // button016
-            // 
-            this.button016.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button016.BackgroundImage")));
-            this.button016.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button016.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button016.ForeColor = System.Drawing.Color.Lime;
-            this.button016.Location = new System.Drawing.Point(25, 338);
-            this.button016.Name = "button016";
-            this.button016.Size = new System.Drawing.Size(254, 35);
-            this.button016.TabIndex = 0;
-            this.button016.Text = "button2";
-            this.button016.UseVisualStyleBackColor = true;
-            this.button016.Click += new System.EventHandler(this.button016_Click);
-            // 
-            // button034
-            // 
-            this.button034.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button034.BackgroundImage")));
-            this.button034.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button034.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button034.ForeColor = System.Drawing.Color.Lime;
-            this.button034.Location = new System.Drawing.Point(334, 297);
-            this.button034.Name = "button034";
-            this.button034.Size = new System.Drawing.Size(254, 35);
-            this.button034.TabIndex = 0;
-            this.button034.Text = "button2";
-            this.button034.UseVisualStyleBackColor = true;
-            this.button034.Click += new System.EventHandler(this.button034_Click);
-            // 
-            // button014
-            // 
-            this.button014.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button014.BackgroundImage")));
-            this.button014.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button014.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button014.ForeColor = System.Drawing.Color.Lime;
-            this.button014.Location = new System.Drawing.Point(25, 297);
-            this.button014.Name = "button014";
-            this.button014.Size = new System.Drawing.Size(254, 35);
-            this.button014.TabIndex = 0;
-            this.button014.Text = "button2";
-            this.button014.UseVisualStyleBackColor = true;
-            this.button014.Click += new System.EventHandler(this.button014_Click);
-            // 
-            // button032
-            // 
-            this.button032.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button032.BackgroundImage")));
-            this.button032.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button032.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button032.ForeColor = System.Drawing.Color.Lime;
-            this.button032.Location = new System.Drawing.Point(334, 256);
-            this.button032.Name = "button032";
-            this.button032.Size = new System.Drawing.Size(254, 35);
-            this.button032.TabIndex = 0;
-            this.button032.Text = "button2";
-            this.button032.UseVisualStyleBackColor = true;
-            this.button032.Click += new System.EventHandler(this.button032_Click);
-            // 
-            // button012
-            // 
-            this.button012.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button012.BackgroundImage")));
-            this.button012.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button012.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button012.ForeColor = System.Drawing.Color.Lime;
-            this.button012.Location = new System.Drawing.Point(25, 256);
-            this.button012.Name = "button012";
-            this.button012.Size = new System.Drawing.Size(254, 35);
-            this.button012.TabIndex = 0;
-            this.button012.Text = "button2";
-            this.button012.UseVisualStyleBackColor = true;
-            this.button012.Click += new System.EventHandler(this.button012_Click);
-            // 
-            // button030
-            // 
-            this.button030.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button030.BackgroundImage")));
-            this.button030.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button030.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button030.ForeColor = System.Drawing.Color.Lime;
-            this.button030.Location = new System.Drawing.Point(334, 215);
-            this.button030.Name = "button030";
-            this.button030.Size = new System.Drawing.Size(254, 35);
-            this.button030.TabIndex = 0;
-            this.button030.Text = "button2";
-            this.button030.UseVisualStyleBackColor = true;
-            this.button030.Click += new System.EventHandler(this.button030_Click);
-            // 
-            // button010
-            // 
-            this.button010.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button010.BackgroundImage")));
-            this.button010.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button010.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button010.ForeColor = System.Drawing.Color.Lime;
-            this.button010.Location = new System.Drawing.Point(25, 215);
-            this.button010.Name = "button010";
-            this.button010.Size = new System.Drawing.Size(254, 35);
-            this.button010.TabIndex = 0;
-            this.button010.Text = "button2";
-            this.button010.UseVisualStyleBackColor = true;
-            this.button010.Click += new System.EventHandler(this.button010_Click);
-            // 
-            // button028
-            // 
-            this.button028.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button028.BackgroundImage")));
-            this.button028.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button028.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button028.ForeColor = System.Drawing.Color.Lime;
-            this.button028.Location = new System.Drawing.Point(334, 174);
-            this.button028.Name = "button028";
-            this.button028.Size = new System.Drawing.Size(254, 35);
-            this.button028.TabIndex = 0;
-            this.button028.Text = "button2";
-            this.button028.UseVisualStyleBackColor = true;
-            this.button028.Click += new System.EventHandler(this.button028_Click);
-            // 
-            // button26
-            // 
-            this.button26.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button26.BackgroundImage")));
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.ForeColor = System.Drawing.Color.Lime;
-            this.button26.Location = new System.Drawing.Point(334, 133);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(254, 35);
-            this.button26.TabIndex = 0;
-            this.button26.Text = "button2";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
-            // button08
-            // 
-            this.button08.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button08.BackgroundImage")));
-            this.button08.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button08.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button08.ForeColor = System.Drawing.Color.Lime;
-            this.button08.Location = new System.Drawing.Point(25, 174);
-            this.button08.Name = "button08";
-            this.button08.Size = new System.Drawing.Size(254, 35);
-            this.button08.TabIndex = 0;
-            this.button08.Text = "button2";
-            this.button08.UseVisualStyleBackColor = true;
-            this.button08.Click += new System.EventHandler(this.button08_Click);
-            // 
-            // button024
-            // 
-            this.button024.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button024.BackgroundImage")));
-            this.button024.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button024.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button024.ForeColor = System.Drawing.Color.Lime;
-            this.button024.Location = new System.Drawing.Point(334, 92);
-            this.button024.Name = "button024";
-            this.button024.Size = new System.Drawing.Size(254, 35);
-            this.button024.TabIndex = 0;
-            this.button024.Text = "button2";
-            this.button024.UseVisualStyleBackColor = true;
-            this.button024.Click += new System.EventHandler(this.button024_Click);
-            // 
-            // button06
-            // 
-            this.button06.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button06.BackgroundImage")));
-            this.button06.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button06.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button06.ForeColor = System.Drawing.Color.Lime;
-            this.button06.Location = new System.Drawing.Point(25, 133);
-            this.button06.Name = "button06";
-            this.button06.Size = new System.Drawing.Size(254, 35);
-            this.button06.TabIndex = 0;
-            this.button06.Text = "button2";
-            this.button06.UseVisualStyleBackColor = true;
-            this.button06.Click += new System.EventHandler(this.button06_Click);
-            // 
-            // button022
-            // 
-            this.button022.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button022.BackgroundImage")));
-            this.button022.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button022.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button022.ForeColor = System.Drawing.Color.Lime;
-            this.button022.Location = new System.Drawing.Point(334, 51);
-            this.button022.Name = "button022";
-            this.button022.Size = new System.Drawing.Size(254, 35);
-            this.button022.TabIndex = 0;
-            this.button022.Text = "button2";
-            this.button022.UseVisualStyleBackColor = true;
-            this.button022.Click += new System.EventHandler(this.button022_Click);
-            // 
-            // button04
-            // 
-            this.button04.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button04.BackgroundImage")));
-            this.button04.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button04.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button04.ForeColor = System.Drawing.Color.Lime;
-            this.button04.Location = new System.Drawing.Point(25, 92);
-            this.button04.Name = "button04";
-            this.button04.Size = new System.Drawing.Size(254, 35);
-            this.button04.TabIndex = 0;
-            this.button04.Text = "button2";
-            this.button04.UseVisualStyleBackColor = true;
-            this.button04.Click += new System.EventHandler(this.button04_Click);
-            // 
-            // button020
-            // 
-            this.button020.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button020.BackgroundImage")));
-            this.button020.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button020.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button020.ForeColor = System.Drawing.Color.Lime;
-            this.button020.Location = new System.Drawing.Point(334, 10);
-            this.button020.Name = "button020";
-            this.button020.Size = new System.Drawing.Size(254, 35);
-            this.button020.TabIndex = 0;
-            this.button020.Text = "button2";
-            this.button020.UseVisualStyleBackColor = true;
-            this.button020.Click += new System.EventHandler(this.button020_Click);
-            // 
-            // button02
-            // 
-            this.button02.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button02.BackgroundImage")));
-            this.button02.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button02.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button02.ForeColor = System.Drawing.Color.Lime;
-            this.button02.Location = new System.Drawing.Point(25, 51);
-            this.button02.Name = "button02";
-            this.button02.Size = new System.Drawing.Size(254, 35);
-            this.button02.TabIndex = 0;
-            this.button02.Text = "button2";
-            this.button02.UseVisualStyleBackColor = true;
-            this.button02.Click += new System.EventHandler(this.button02_Click);
-            // 
-            // button00
-            // 
-            this.button00.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button00.BackgroundImage")));
-            this.button00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button00.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button00.ForeColor = System.Drawing.Color.Lime;
-            this.button00.Location = new System.Drawing.Point(25, 10);
-            this.button00.Name = "button00";
-            this.button00.Size = new System.Drawing.Size(254, 35);
-            this.button00.TabIndex = 0;
-            this.button00.Text = "button2";
-            this.button00.UseVisualStyleBackColor = true;
-            this.button00.Click += new System.EventHandler(this.button00_Click);
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showToolStripMenuItem,
+            this.closeToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(79, 48);
             // 
             // main
             // 
@@ -680,9 +681,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,26 +708,26 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button038;
-        private System.Windows.Forms.Button button018;
-        private System.Windows.Forms.Button button036;
-        private System.Windows.Forms.Button button016;
-        private System.Windows.Forms.Button button034;
-        private System.Windows.Forms.Button button014;
-        private System.Windows.Forms.Button button032;
-        private System.Windows.Forms.Button button012;
-        private System.Windows.Forms.Button button030;
-        private System.Windows.Forms.Button button010;
-        private System.Windows.Forms.Button button028;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button08;
-        private System.Windows.Forms.Button button024;
-        private System.Windows.Forms.Button button06;
-        private System.Windows.Forms.Button button022;
-        private System.Windows.Forms.Button button04;
-        private System.Windows.Forms.Button button020;
-        private System.Windows.Forms.Button button02;
-        private System.Windows.Forms.Button button00;
+        private System.Windows.Forms.Button btnProf20;
+        private System.Windows.Forms.Button btnProf10;
+        private System.Windows.Forms.Button btnProf19;
+        private System.Windows.Forms.Button btnProf9;
+        private System.Windows.Forms.Button btnProf18;
+        private System.Windows.Forms.Button btnProf8;
+        private System.Windows.Forms.Button btnProf17;
+        private System.Windows.Forms.Button btnProf7;
+        private System.Windows.Forms.Button btnProf16;
+        private System.Windows.Forms.Button btnProf6;
+        private System.Windows.Forms.Button btnProf15;
+        private System.Windows.Forms.Button btnProf14;
+        private System.Windows.Forms.Button btnProf5;
+        private System.Windows.Forms.Button btnProf13;
+        private System.Windows.Forms.Button btnProf4;
+        private System.Windows.Forms.Button btnProf12;
+        private System.Windows.Forms.Button btnProf3;
+        private System.Windows.Forms.Button btnProf11;
+        private System.Windows.Forms.Button btnProf2;
+        private System.Windows.Forms.Button btnProf1;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;

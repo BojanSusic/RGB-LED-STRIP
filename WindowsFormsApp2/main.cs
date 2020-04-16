@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO.Ports;
+using System.Text.RegularExpressions;
+
 namespace WindowsFormsApp2
 {
     
@@ -21,10 +23,12 @@ namespace WindowsFormsApp2
         public Point tackaR=new Point(100,0);
         public Point tackaG = new Point(100, 0);
         public Point tackaB = new Point(100, 0);
-        private SerialPort Arduino;
-        private XmlDocument xmldoc = new XmlDocument();
+        private static SerialPort Arduino;
         private int x;
 
+
+        private static string indata="0";
+        private static bool connected = false;
         /// <summary>
         /// Main screen of application.
         /// </summary>
@@ -33,9 +37,9 @@ namespace WindowsFormsApp2
             InitializeComponent();
             set_Buttons_names();
             Arduino = new SerialPort();
-            init();
+            init(); //opens Arduino port
         }
-        
+       
         /// <summary>
         /// Sets the position and background color of "save" form and disables this form.
         /// After save form is closed, enable this form.
@@ -370,28 +374,16 @@ namespace WindowsFormsApp2
         private void set_Buttons_names() { 
             try
             {
-                xmldoc.Load("buttons.xml");
-                XmlNode root = xmldoc.DocumentElement;
-                button00.Text =root.ChildNodes[0].InnerText;
-                button02.Text = root.ChildNodes[2].InnerText;
-                button04.Text = root.ChildNodes[4].InnerText;
-                button06.Text = root.ChildNodes[6].InnerText;
-                button08.Text = root.ChildNodes[8].InnerText;
-                button010.Text = root.ChildNodes[10].InnerText;
-                button012.Text = root.ChildNodes[12].InnerText;
-                button014.Text = root.ChildNodes[14].InnerText;
-                button016.Text = root.ChildNodes[16].InnerText;
-                button018.Text = root.ChildNodes[18].InnerText;
-                button020.Text = root.ChildNodes[20].InnerText;
-                button022.Text = root.ChildNodes[22].InnerText;
-                button024.Text = root.ChildNodes[24].InnerText;
-                button26.Text = root.ChildNodes[26].InnerText;
-                button028.Text = root.ChildNodes[28].InnerText;
-                button030.Text = root.ChildNodes[30].InnerText;
-                button032.Text = root.ChildNodes[32].InnerText;
-                button034.Text = root.ChildNodes[34].InnerText;
-                button036.Text = root.ChildNodes[36].InnerText;
-                button038.Text = root.ChildNodes[38].InnerText;
+                Button[] btnsProfile = new Button[20];
+                for (int i = 0; i < 20; i++) {
+                    btnsProfile[i] = panel2.Controls[19-i] as Button;
+                }
+                DataSet dsProfiles = new DataSet();
+                dsProfiles.ReadXml("buttons.xml");
+                for (int i = 0; i < 20; i++)
+                {
+                    btnsProfile[i].Text=dsProfiles.Tables[0].Rows[i].ItemArray[0].ToString();
+                }
             }
             catch (Exception)
             {
@@ -404,11 +396,12 @@ namespace WindowsFormsApp2
         /// </summary>
         /// <param name="btnnumber">Number of button pressed in "profiles" tab.</param>
         private void get_Buttons_sets(int btnnumber) {
-            xmldoc.Load("buttons.xml");
-            XmlNode root = xmldoc.DocumentElement;
-            tackaR.X=Convert.ToInt32(Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[0]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[1]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[2]));
-            tackaG.X = Convert.ToInt32(Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[3]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[4]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[5]));
-            tackaB.X = Convert.ToInt32(Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[6]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[7]) + Convert.ToString(root.ChildNodes[btnnumber + 1].InnerText[8]));
+            DataSet dsProfiles = new DataSet();
+            dsProfiles.ReadXml("buttons.xml");
+            int set = int.Parse(dsProfiles.Tables[0].Rows[btnnumber-1].ItemArray[1].ToString());
+            tackaB.X = set % 1000;
+            tackaG.X = (set / 1000) % 1000;
+            tackaR.X = set / 1000000;
             pictureBox1.Refresh();
             pictureBox2.Refresh();
             pictureBox3.Refresh();
@@ -420,178 +413,8 @@ namespace WindowsFormsApp2
         /// </summary>
         private void button00_Click(object sender, EventArgs e)
         {
-            get_Buttons_sets(0);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button02_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(2);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button04_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(4);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button06_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(6);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button08_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(8);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button010_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(10);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button012_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(12);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button014_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(14);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button016_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(16);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button018_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(18);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button020_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(20);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button022_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(22);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button024_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(24);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button26_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(26);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button028_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(28);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button030_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(30);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button032_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(32);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button034_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(34);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button036_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(36);
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// set RGB sliders and change text.
-        /// </summary>
-        private void button038_Click(object sender, EventArgs e)
-        {
-            get_Buttons_sets(38);
+            Button btn = (Button)sender;
+            get_Buttons_sets(int.Parse(Regex.Match(btn.Name, @"\d+").Value));
             textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
@@ -627,7 +450,16 @@ namespace WindowsFormsApp2
                 Arduino.WriteLine("BLINK0000");
             }
         }
-      
+
+        private static void DataReceivedHandler(object sender,SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            indata = sp.ReadExisting()+"5";
+            if (indata[0] == '1')
+            {
+                connected = true;
+            }
+        }
         /// <summary>
         /// Opens serial port to arduino.
         /// </summary>
@@ -635,7 +467,21 @@ namespace WindowsFormsApp2
             Arduino.BaudRate = 9600; 
             try
                 {
-                    Arduino.Open();
+                string[] serialPorts = SerialPort.GetPortNames();
+                int sPlenght=0;
+                while (!connected && sPlenght < serialPorts.Length)
+                {
+                    Arduino.Close();
+                    Arduino.PortName = serialPorts[sPlenght];
+                    sPlenght++;
+                   Arduino.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+                    try
+                    {
+                        Arduino.Open();
+                        Arduino.Write("COMPING00");
+                    }
+                    catch { }
+                }
                 }
                 catch {
                 MessageBox.Show("IT IS NOT POSSIBLE TO OPEN THIS PORT");
