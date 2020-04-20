@@ -75,20 +75,7 @@ namespace WindowsFormsApp2
             dozvolaR = true;
         }
 
-        /// <summary>
-        /// Sets slider(picturebox1) position according to mouse position.
-        /// </summary>
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (dozvolaR) {
-                x = tackaR.X;
-                if(e.X>=0 && e.X<=255)
-                tackaR.X = e.X;
-                pictureBox1.Refresh();
-            
-            }
-        }
-
+      
         /// <summary>
         /// Disables slider movement.
         /// Sets textbox text to hexadecimal.
@@ -149,18 +136,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Sets slider(picturebox2) position according to mouse position.
         /// </summary>
-        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (dozvolaG)
-            {
-                x = tackaG.X;
-                if (e.X >= 0 && e.X <= 255)
-                    tackaG.X = e.X;
-                //    tacka.Y = e.Y;
-                pictureBox2.Refresh();
-
-            }
-        }
+      
 
         /// <summary>
         /// Enables slider movement.
@@ -192,7 +168,7 @@ namespace WindowsFormsApp2
                 if (e.X >= 0 && e.X <= 255)
                     tackaB.X = e.X;
                
-                pictureBox3.Refresh();
+                //pictureBox3.Refresh();
 
             }
         }
@@ -225,10 +201,6 @@ namespace WindowsFormsApp2
         {
             Close();
         }
-
-       
-
-       
 
         /// <summary>
         /// When icon in tray is double clicked, show the form.
@@ -291,9 +263,7 @@ namespace WindowsFormsApp2
                     tackaR.X = pixel.R;
                     tackaG.X = pixel.G;
                     tackaB.X = pixel.B;
-                    pictureBox1.Refresh();
-                    pictureBox2.Refresh();
-                    pictureBox3.Refresh();
+                    //set value of tracbar
                 }
             }
         }
@@ -315,9 +285,9 @@ namespace WindowsFormsApp2
                             send_To_Arduino();
                         else
                             MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
-                        pictureBox1.Refresh();
-                        pictureBox2.Refresh();
-                        pictureBox3.Refresh();
+                      //  pictureBox1.Refresh();
+                      // pictureBox2.Refresh();
+                     //   pictureBox3.Refresh();
                     }
                     catch (Exception)
                     {
@@ -341,7 +311,7 @@ namespace WindowsFormsApp2
             {
                 Button[] btnsProfile = new Button[20];
                 for (int i = 0; i < 20; i++) {
-                    btnsProfile[i] = panel2.Controls[19-i] as Button;
+                    btnsProfile[i] = pnlProfiles.Controls[19-i] as Button;
                 }
                 DataSet dsProfiles = new DataSet();
                 dsProfiles.ReadXml("buttons.xml");
@@ -367,9 +337,9 @@ namespace WindowsFormsApp2
             tackaB.X = set % 1000;
             tackaG.X = (set / 1000) % 1000;
             tackaR.X = set / 1000000;
-            pictureBox1.Refresh();
-            pictureBox2.Refresh();
-            pictureBox3.Refresh();
+           // pictureBox1.Refresh();
+          //  pictureBox2.Refresh();
+            //pictureBox3.Refresh();
             promjenaBoje(tackaR.X, tackaG.X, tackaB.X);
         }
 
@@ -532,9 +502,9 @@ namespace WindowsFormsApp2
                     tackaR.X = pixel.R;
                     tackaG.X = pixel.G;
                     tackaB.X = pixel.B;
-                    pictureBox1.Refresh();
-                    pictureBox2.Refresh();
-                    pictureBox3.Refresh();
+                 //   pictureBox1.Refresh();
+                 //   pictureBox2.Refresh();
+                    //pictureBox3.Refresh();
                 }
             }
         }
@@ -557,6 +527,25 @@ namespace WindowsFormsApp2
             this.ShowInTaskbar = false;
             notifyIcon1.Visible = true;
             notifyIcon1.ShowBalloonTip(3000);
+        }
+
+        private void tbRed_ValueChanged(object sender, EventArgs e)
+        {
+            tbColorCode.Text = "#" + tbRed.Vrijednost.ToString("X2") + tbGreen.Vrijednost.ToString("X2") + tbBlue.Vrijednost.ToString("X2");
+            promjenaBoje(tbRed.Vrijednost, tbGreen.Vrijednost, tbBlue.Vrijednost);
+        }
+
+        private void tbGreen_ValueChanged(object sender, EventArgs e)
+        {
+            tbColorCode.Text = "#" + tbRed.Vrijednost.ToString("X2") + tbGreen.Vrijednost.ToString("X2") + tbBlue.Vrijednost.ToString("X2");
+            promjenaBoje(tbRed.Vrijednost, tbGreen.Vrijednost, tbBlue.Vrijednost);
+
+        }
+        private void tbBlue_ValueChanged(object sender, EventArgs e)
+        {
+            tbColorCode.Text = "#" + tbRed.Vrijednost.ToString("X2") + tbGreen.Vrijednost.ToString("X2") + tbBlue.Vrijednost.ToString("X2");
+            promjenaBoje(tbRed.Vrijednost, tbGreen.Vrijednost, tbBlue.Vrijednost);
+
         }
     }
 }

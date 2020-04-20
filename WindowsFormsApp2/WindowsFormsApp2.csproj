@@ -58,6 +58,9 @@
     <Compile Include="CTab.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="IntroForm.cs">
       <SubType>Form</SubType>
     </Compile>
