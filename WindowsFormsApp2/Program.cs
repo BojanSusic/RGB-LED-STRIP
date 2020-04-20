@@ -23,8 +23,8 @@ namespace WindowsFormsApp2
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new IntroForm());
-             Application.Run(new main());
+         //  Application.Run(new IntroForm());
+             Application.Run(new Main());
            
             //Application.Run(new ArduinoEr());
             // Application.Run(new save());           

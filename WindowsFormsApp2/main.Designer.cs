@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class main
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +71,8 @@
             this.btnSaveProf = new System.Windows.Forms.Button();
             this.background = new System.Windows.Forms.PictureBox();
             this.cTab1 = new WindowsFormsApp2.CTab();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.btnClose = new WindowsFormsApp2.CButton();
+            this.btnMinimize = new WindowsFormsApp2.CButton();
             this.contextMenuStrip1.SuspendLayout();
             this.profiles.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,18 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             this.cTab1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(550, 27);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(99, 31);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 12;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox6_MouseClick);
             // 
             // notifyIcon1
             // 
@@ -657,6 +645,34 @@
             this.cTab1.Size = new System.Drawing.Size(651, 515);
             this.cTab1.TabIndex = 15;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnClose.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.Red;
+            this.btnClose.Location = new System.Drawing.Point(591, 25);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Side = WindowsFormsApp2.Side.LEFT;
+            this.btnClose.Size = new System.Drawing.Size(57, 31);
+            this.btnClose.TabIndex = 18;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnMinimize.Font = new System.Drawing.Font("MV Boli", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnMinimize.Location = new System.Drawing.Point(548, 25);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Side = WindowsFormsApp2.Side.RIGHT;
+            this.btnMinimize.Size = new System.Drawing.Size(57, 31);
+            this.btnMinimize.TabIndex = 18;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,7 +680,8 @@
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(675, 550);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.btnMinimize);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cTab1);
             this.Controls.Add(this.background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -672,7 +689,6 @@
             this.Name = "main";
             this.Text = "LED STRIP CONTROL";
             this.Load += new System.EventHandler(this.main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.profiles.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -691,7 +707,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
@@ -733,5 +748,7 @@
         private System.Windows.Forms.Button btnSaveProf;
         private CTab cTab1;
         private System.Windows.Forms.PictureBox background;
+        private CButton btnClose;
+        private CButton btnMinimize;
     }
 }

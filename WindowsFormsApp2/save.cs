@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace WindowsFormsApp2
 {
-    public partial class save : Form
+    public partial class Save : Form
     {
         
         public int otvorena=1;
@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Class used for saving a preset profile.
         /// </summary>
-        public save()
+        public Save()
         {
             InitializeComponent();
             Set_lbImena_Items();
@@ -68,7 +68,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// This method creates a 9 character string (3 characters for each color).
         /// Gets background color and makes strings setR, setG and setB. 
-        /// <see cref="main.button1_Click_1(object, EventArgs)"/> for background color explanation.
+        /// <see cref="Main.button1_Click_1(object, EventArgs)"/> for background color explanation.
         /// </summary>
         /// <returns>Returns a 9 character string, RedGreenBlue respectively</returns>
         public string Napravi_Set() {

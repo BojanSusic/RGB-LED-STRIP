@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 namespace WindowsFormsApp2
 {
     
-    public partial class main : Form
+    public partial class Main : Form
     {
       
         private Image image = Image.FromFile("SLike/slider.png");
@@ -32,7 +32,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Main screen of application.
         /// </summary>
-        public main()
+        public Main()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
         /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
-            save sav = new save();
+            Save sav = new Save();
             sav.ShowInTaskbar = false;
             this.Enabled = false;
             sav.StartPosition=FormStartPosition.Manual;
@@ -228,25 +228,7 @@ namespace WindowsFormsApp2
 
        
 
-        /// <summary>
-        /// Minimize to taskbar or minimize to tray.
-        /// </summary>
-        private void pictureBox6_MouseClick(object sender, MouseEventArgs e)
-        {
-            Bitmap imp = new Bitmap(pictureBox6.Image);
-            Color pixel = imp.GetPixel(e.X, e.Y);
-            if (pixel.R == 21 || pixel.B == 255)
-            {
-                this.WindowState = FormWindowState.Minimized;
-            }
-            else if (pixel.R == 20 || pixel.R == 255) {
-                this.WindowState = FormWindowState.Minimized;
-                notifyIcon1.Icon = SystemIcons.Application;
-                this.ShowInTaskbar = false;
-                notifyIcon1.Visible = true;
-                notifyIcon1.ShowBalloonTip(3000);
-            }
-        }
+       
 
         /// <summary>
         /// When icon in tray is double clicked, show the form.
@@ -560,6 +542,21 @@ namespace WindowsFormsApp2
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             //TODO add move method;
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            notifyIcon1.Icon = SystemIcons.Application;
+            this.ShowInTaskbar = false;
+            notifyIcon1.Visible = true;
+            notifyIcon1.ShowBalloonTip(3000);
         }
     }
 }
