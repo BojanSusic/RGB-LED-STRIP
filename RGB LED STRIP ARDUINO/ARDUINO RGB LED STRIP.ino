@@ -16,6 +16,7 @@ String input;
 String command;
 int blinkState=0;
 int i;
+bool connected=false;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 
@@ -33,7 +34,7 @@ void setup(){
  */
 void loop() {
   if(irrecv.decode(&results)){
-    Serial.println(results.value, HEX);
+  //  Serial.println(results.value, HEX);
     command="";
     if (results.value==0xFF629D){
       dim(Red,&brightR);
@@ -84,7 +85,11 @@ void loop() {
    }
    else{
       read();
-    if(command=="FADE00000"){
+    if(command=="COMPING00"){
+        Serial.println("1");
+        command="";
+      }
+   else if(command=="FADE00000"){
        fadeEffect();
       }
     else if(command=="RAINBOW00"){
@@ -116,9 +121,9 @@ void stringToRGB(){
      brightB=(command[6]-48)*100;
     brightB+=(command[7]-48)*10;
     brightB+=(command[8]-48);
-    Serial.println(brightR);
-     Serial.println(brightG);
-      Serial.println(brightB);
+   // Serial.println(brightR);
+     //Serial.println(brightG);
+      //Serial.println(brightB);
   }
   
 /**
