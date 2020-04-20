@@ -59,19 +59,18 @@
             this.btnProf1 = new System.Windows.Forms.Button();
             this.home = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFX = new System.Windows.Forms.Label();
+            this.lblB = new System.Windows.Forms.Label();
+            this.lblG = new System.Windows.Forms.Label();
+            this.lblR = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbEffects = new System.Windows.Forms.ComboBox();
+            this.tbColorCode = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnSaveProf = new System.Windows.Forms.Button();
+            this.background = new System.Windows.Forms.PictureBox();
             this.cTab1 = new WindowsFormsApp2.CTab();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -79,12 +78,11 @@
             this.panel2.SuspendLayout();
             this.home.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             this.cTab1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -474,34 +472,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblFX);
+            this.panel1.Controls.Add(this.lblB);
+            this.panel1.Controls.Add(this.lblG);
+            this.panel1.Controls.Add(this.lblR);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.cbEffects);
+            this.panel1.Controls.Add(this.tbColorCode);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSaveProf);
             this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(646, 432);
             this.panel1.TabIndex = 10;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(605, 382);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox9_MouseClick);
             // 
             // pictureBox8
             // 
@@ -516,49 +502,49 @@
             this.pictureBox8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseMove);
             this.pictureBox8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseUp);
             // 
-            // label4
+            // lblFX
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label4.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 279);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 39);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "FX";
+            this.lblFX.AutoSize = true;
+            this.lblFX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblFX.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFX.Location = new System.Drawing.Point(4, 279);
+            this.lblFX.Name = "lblFX";
+            this.lblFX.Size = new System.Drawing.Size(56, 39);
+            this.lblFX.TabIndex = 8;
+            this.lblFX.Text = "FX";
             // 
-            // label3
+            // lblB
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label3.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 39);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "B";
+            this.lblB.AutoSize = true;
+            this.lblB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblB.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB.Location = new System.Drawing.Point(13, 184);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(36, 39);
+            this.lblB.TabIndex = 8;
+            this.lblB.Text = "B";
             // 
-            // label2
+            // lblG
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label2.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 39);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "G";
+            this.lblG.AutoSize = true;
+            this.lblG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblG.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblG.Location = new System.Drawing.Point(13, 91);
+            this.lblG.Name = "lblG";
+            this.lblG.Size = new System.Drawing.Size(38, 39);
+            this.lblG.TabIndex = 8;
+            this.lblG.Text = "G";
             // 
-            // label1
+            // lblR
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label1.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 39);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "R";
+            this.lblR.AutoSize = true;
+            this.lblR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblR.Font = new System.Drawing.Font("MV Boli", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblR.Location = new System.Drawing.Point(13, 5);
+            this.lblR.Name = "lblR";
+            this.lblR.Size = new System.Drawing.Size(38, 39);
+            this.lblR.TabIndex = 8;
+            this.lblR.Text = "R";
             // 
             // pictureBox3
             // 
@@ -588,34 +574,34 @@
             this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
             this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
-            // comboBox1
+            // cbEffects
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.comboBox1.Font = new System.Drawing.Font("MV Boli", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbEffects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.cbEffects.Font = new System.Drawing.Font("MV Boli", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEffects.FormattingEnabled = true;
+            this.cbEffects.Items.AddRange(new object[] {
             "NONE",
             "FADE",
             "RAINBOW",
             "BLINK"});
-            this.comboBox1.Location = new System.Drawing.Point(69, 288);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(262, 25);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "NONE";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbEffects.Location = new System.Drawing.Point(69, 288);
+            this.cbEffects.Name = "cbEffects";
+            this.cbEffects.Size = new System.Drawing.Size(262, 25);
+            this.cbEffects.TabIndex = 5;
+            this.cbEffects.Text = "NONE";
+            this.cbEffects.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // tbColorCode
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(437, 287);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 26);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.tbColorCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.tbColorCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbColorCode.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbColorCode.Location = new System.Drawing.Point(437, 287);
+            this.tbColorCode.Name = "tbColorCode";
+            this.tbColorCode.Size = new System.Drawing.Size(135, 26);
+            this.tbColorCode.TabIndex = 4;
+            this.tbColorCode.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbColorCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // pictureBox1
             // 
@@ -632,30 +618,31 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // button1
+            // btnSaveProf
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("MV Boli", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(260, 365);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "SAVE PROFILE";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnSaveProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnSaveProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveProf.Font = new System.Drawing.Font("MV Boli", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProf.ForeColor = System.Drawing.Color.Lime;
+            this.btnSaveProf.Location = new System.Drawing.Point(260, 365);
+            this.btnSaveProf.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSaveProf.Name = "btnSaveProf";
+            this.btnSaveProf.Size = new System.Drawing.Size(140, 32);
+            this.btnSaveProf.TabIndex = 1;
+            this.btnSaveProf.Text = "SAVE PROFILE";
+            this.btnSaveProf.UseVisualStyleBackColor = false;
+            this.btnSaveProf.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // pictureBox4
+            // background
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(675, 550);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
+            this.background.Image = ((System.Drawing.Image)(resources.GetObject("background.Image")));
+            this.background.Location = new System.Drawing.Point(0, 0);
+            this.background.Name = "background";
+            this.background.Size = new System.Drawing.Size(675, 550);
+            this.background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.background.TabIndex = 16;
+            this.background.TabStop = false;
+            this.background.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // cTab1
             // 
@@ -679,7 +666,7 @@
             this.ClientSize = new System.Drawing.Size(675, 550);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.cTab1);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "main";
@@ -692,12 +679,11 @@
             this.home.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             this.cTab1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -734,19 +720,18 @@
         private System.Windows.Forms.Button btnProf1;
         private System.Windows.Forms.TabPage home;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFX;
+        private System.Windows.Forms.Label lblB;
+        private System.Windows.Forms.Label lblG;
+        private System.Windows.Forms.Label lblR;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbEffects;
+        private System.Windows.Forms.TextBox tbColorCode;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveProf;
         private CTab cTab1;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox background;
     }
 }

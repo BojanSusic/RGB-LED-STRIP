@@ -97,7 +97,7 @@ namespace WindowsFormsApp2
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             dozvolaR = false;
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace WindowsFormsApp2
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             dozvolaG = false;
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
 
         }
 
@@ -178,7 +178,7 @@ namespace WindowsFormsApp2
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
         {
             dozvolaB = false;
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
         /// <summary>
@@ -226,23 +226,7 @@ namespace WindowsFormsApp2
             Close();
         }
 
-        /// <summary>
-        /// Send panel1 to back and hide picturebox4
-        /// or bring panel1 to front and show picturebox4
-        /// </summary>
-      /*  private void pictureBox5_MouseClick(object sender, MouseEventArgs e)
-        {
-            Bitmap imp = new Bitmap(pictureBox5.Image);
-            Color pixel = imp.GetPixel(e.X, e.Y);
-            if (pixel.B == 23 || pixel.G == 254)
-            {
-                panel1.SendToBack();
-            }
-            else if (pixel.B == 21 || pixel.G == 255)
-            {
-                panel1.BringToFront();
-            }
-        }*/
+       
 
         /// <summary>
         /// Minimize to taskbar or minimize to tray.
@@ -338,13 +322,13 @@ namespace WindowsFormsApp2
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (textBox1.Text.Length == 7)
+                if (tbColorCode.Text.Length == 7)
                 {
                     try
                     {
-                        tackaR.X = Convert.ToInt32(Convert.ToString(textBox1.Text[1]) + Convert.ToString(textBox1.Text[2]), 16);
-                        tackaG.X = Convert.ToInt32(Convert.ToString(textBox1.Text[3]) + Convert.ToString(textBox1.Text[4]), 16);
-                        tackaB.X = Convert.ToInt32(Convert.ToString(textBox1.Text[5]) + Convert.ToString(textBox1.Text[6]), 16);
+                        tackaR.X = Convert.ToInt32(Convert.ToString(tbColorCode.Text[1]) + Convert.ToString(tbColorCode.Text[2]), 16);
+                        tackaG.X = Convert.ToInt32(Convert.ToString(tbColorCode.Text[3]) + Convert.ToString(tbColorCode.Text[4]), 16);
+                        tackaB.X = Convert.ToInt32(Convert.ToString(tbColorCode.Text[5]) + Convert.ToString(tbColorCode.Text[6]), 16);
                         if(Arduino.IsOpen)
                             send_To_Arduino();
                         else
@@ -414,7 +398,7 @@ namespace WindowsFormsApp2
         {
             Button btn = (Button)sender;
             get_Buttons_sets(int.Parse(Regex.Match(btn.Name, @"\d+").Value));
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
         /// <summary>
@@ -433,18 +417,18 @@ namespace WindowsFormsApp2
         /// </summary>
         private void send_To_Arduino() {
 
-            if (comboBox1.SelectedItem == "NONE" )
+            if (cbEffects.SelectedItem == "NONE" )
             {
                 Arduino.WriteLine(tackaR.X.ToString("D3") + tackaG.X.ToString("D3") + tackaB.X.ToString("D3"));
             }
-            else if(comboBox1.SelectedItem=="FADE") {
+            else if(cbEffects.SelectedItem=="FADE") {
                 Arduino.WriteLine("FADE00000");
             }
-            else if (comboBox1.SelectedItem == "RAINBOW")
+            else if (cbEffects.SelectedItem == "RAINBOW")
             {
                 Arduino.WriteLine("RAINBOW00");
             }
-            else if (comboBox1.SelectedItem == "BLINK")
+            else if (cbEffects.SelectedItem == "BLINK")
             {
                 Arduino.WriteLine("BLINK0000");
             }
@@ -511,7 +495,7 @@ namespace WindowsFormsApp2
             if (Arduino.IsOpen)
             {
                 send_To_Arduino();
-                comboBox1.SelectedItem = "NONE";
+                cbEffects.SelectedItem = "NONE";
             }
             else
                 MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
@@ -549,7 +533,7 @@ namespace WindowsFormsApp2
         /// </summary>
         private void pictureBox8_MouseUp(object sender, MouseEventArgs e)
         {
-            textBox1.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
         }
 
         /// <summary>
@@ -573,6 +557,9 @@ namespace WindowsFormsApp2
             }
         }
 
-        
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            //TODO add move method;
+        }
     }
 }
