@@ -34,6 +34,7 @@ namespace WindowsFormsApp2
         /// </summary>
         public main()
         {
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             set_Buttons_names();
             Arduino = new SerialPort();
@@ -229,21 +230,19 @@ namespace WindowsFormsApp2
         /// Send panel1 to back and hide picturebox4
         /// or bring panel1 to front and show picturebox4
         /// </summary>
-        private void pictureBox5_MouseClick(object sender, MouseEventArgs e)
+      /*  private void pictureBox5_MouseClick(object sender, MouseEventArgs e)
         {
             Bitmap imp = new Bitmap(pictureBox5.Image);
             Color pixel = imp.GetPixel(e.X, e.Y);
             if (pixel.B == 23 || pixel.G == 254)
             {
                 panel1.SendToBack();
-                pictureBox4.Hide();
             }
             else if (pixel.B == 21 || pixel.G == 255)
             {
                 panel1.BringToFront();
-                pictureBox4.Show();
             }
-        }
+        }*/
 
         /// <summary>
         /// Minimize to taskbar or minimize to tray.
@@ -297,8 +296,8 @@ namespace WindowsFormsApp2
         private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
         {
             //MEMORY!!!
-            Bitmap imp = new Bitmap(pictureBox7.Image);
-            Color pixel = imp.GetPixel(e.X, e.Y);
+            //  Bitmap imp = new Bitmap(pictureBox7.Image);
+            Color pixel = Color.Red;// imp.GetPixel(e.X, e.Y);
             if (pixel.B == 53 || pixel.G == 255)
             {
                 Info info = new Info();
@@ -573,5 +572,7 @@ namespace WindowsFormsApp2
                 }
             }
         }
+
+        
     }
 }

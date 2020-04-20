@@ -52,6 +52,9 @@
     <Compile Include="ArduinoEr.Designer.cs">
       <DependentUpon>ArduinoEr.cs</DependentUpon>
     </Compile>
+    <Compile Include="CTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
