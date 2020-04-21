@@ -19,13 +19,7 @@ namespace WindowsFormsApp2
       
         private Image image = Image.FromFile("SLike/slider.png");
         public static string[] nazivi = new string[20];
-        //Start position of the sliders.
-   /*     public Point tackaR=new Point(100,0);
-        public Point tackaG = new Point(100, 0);
-        public Point tackaB = new Point(100, 0);*/
         private static SerialPort Arduino;
-
-
         private static string indata="0";
         private static bool connected = false;
         /// <summary>
@@ -47,7 +41,7 @@ namespace WindowsFormsApp2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btbSaveProf_Click(object sender, EventArgs e)
         {
             Save sav = new Save();
             sav.ShowInTaskbar = false;
@@ -71,6 +65,7 @@ namespace WindowsFormsApp2
         private void promjenaBoje(int R,int G, int B)
         {
             this.BackColor = Color.FromArgb(R, G, B);
+            cInfoButton1.BorderColor = Color.FromArgb(R, G, B);
         }
         
   
@@ -100,28 +95,6 @@ namespace WindowsFormsApp2
             }          
         }
      
-        /// <summary>
-        /// Show Save form and disable this form.
-        /// When save form is closed enable this form.
-        /// </summary>
-        private void pictureBox7_MouseClick(object sender, MouseEventArgs e)
-        {
-            //MEMORY!!!
-            //  Bitmap imp = new Bitmap(pictureBox7.Image);
-            Color pixel = Color.Red;// imp.GetPixel(e.X, e.Y);
-            if (pixel.B == 53 || pixel.G == 255)
-            {
-                Info info = new Info();
-                info.ShowInTaskbar = false;
-                this.Enabled = false;
-                info.StartPosition = FormStartPosition.Manual;
-                info.SetDesktopLocation(this.Left + 140, this.Top);
-                info.Show();
-                if (info.Created == false)
-                    this.Enabled = true;
-                info.FormClosed += (o, args) => { this.Enabled = true; };
-            }          
-        }
 
         /// <summary>
         /// Get color of selected pixel and set sliders at those values.
@@ -185,21 +158,46 @@ namespace WindowsFormsApp2
         private void set_Buttons_names() { 
             try
             {
-                Button[] btnsProfile = new Button[20];
+                List<Button> btnsProfiles = new List<Button>();
+                btnsProfiles.Clear();
                 for (int i = 0; i < 20; i++) {
-                    btnsProfile[i] = pnlProfiles.Controls[19-i] as Button;
+                    btnsProfiles.Add(pnlProfiles.Controls[19 - i] as Button);
                 }
+               
+                btnsProfiles = SortList(btnsProfiles);
+                
                 DataSet dsProfiles = new DataSet();
                 dsProfiles.ReadXml("buttons.xml");
                 for (int i = 0; i < 20; i++)
                 {
-                    btnsProfile[i].Text=dsProfiles.Tables[0].Rows[i].ItemArray[0].ToString();
+                    btnsProfiles[i].Text=dsProfiles.Tables[0].Rows[i].ItemArray[0].ToString();
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Error opening file! Wrong name or the file does not exist.");
             }
+        }
+        private List<Button> SortList(List<Button> buttons)
+        {
+            Button temp = new Button();
+            for(int i=0;i<20;i++)
+            {
+                int x = int.Parse(Regex.Match(buttons[i].Name, @"\d+").Value);
+                for (int j =i; j < 20; j++)
+                {
+                    int y = int.Parse(Regex.Match(buttons[j].Name, @"\d+").Value);
+                    if (y < x)
+                    {
+                        x = y;
+                        temp = buttons[i];
+                        buttons[i] = buttons[j];
+                        buttons[j] = temp;
+                    }
+                }
+                
+            }
+            return buttons;
         }
 
         /// <summary>
@@ -420,6 +418,22 @@ namespace WindowsFormsApp2
             tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
             promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
 
+        }
+
+        private void cInfoButton1_Click(object sender, EventArgs e)
+        {
+            //MEMORY!!!
+          
+                Info info = new Info();
+                info.ShowInTaskbar = false;
+                this.Enabled = false;
+                info.StartPosition = FormStartPosition.Manual;
+                info.SetDesktopLocation(this.Left + 140, this.Top);
+                info.Show();
+                if (info.Created == false)
+                    this.Enabled = true;
+                info.FormClosed += (o, args) => { this.Enabled = true; };
+            
         }
     }
 }

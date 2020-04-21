@@ -35,6 +35,7 @@
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profiles = new System.Windows.Forms.TabPage();
+            this.cInfoButton1 = new WindowsFormsApp2.CInfoButton();
             this.pnlProfiles = new System.Windows.Forms.Panel();
             this.btnProf20 = new System.Windows.Forms.Button();
             this.btnProf10 = new System.Windows.Forms.Button();
@@ -121,6 +122,7 @@
             // profiles
             // 
             this.profiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.profiles.Controls.Add(this.cInfoButton1);
             this.profiles.Controls.Add(this.pnlProfiles);
             this.profiles.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profiles.ForeColor = System.Drawing.Color.Lime;
@@ -128,9 +130,20 @@
             this.profiles.Name = "profiles";
             this.profiles.Padding = new System.Windows.Forms.Padding(3);
             this.profiles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.profiles.Size = new System.Drawing.Size(643, 472);
+            this.profiles.Size = new System.Drawing.Size(655, 472);
             this.profiles.TabIndex = 1;
             this.profiles.Text = "PROFILES";
+            // 
+            // cInfoButton1
+            // 
+            this.cInfoButton1.BorderColor = System.Drawing.Color.Red;
+            this.cInfoButton1.Location = new System.Drawing.Point(622, 91);
+            this.cInfoButton1.Name = "cInfoButton1";
+            this.cInfoButton1.Size = new System.Drawing.Size(36, 205);
+            this.cInfoButton1.TabIndex = 15;
+            this.cInfoButton1.Text = "cInfoButton1";
+            this.cInfoButton1.UseVisualStyleBackColor = true;
+            this.cInfoButton1.Click += new System.EventHandler(this.cInfoButton1_Click);
             // 
             // pnlProfiles
             // 
@@ -450,7 +463,7 @@
             this.home.Location = new System.Drawing.Point(4, 39);
             this.home.Name = "home";
             this.home.Padding = new System.Windows.Forms.Padding(3);
-            this.home.Size = new System.Drawing.Size(643, 472);
+            this.home.Size = new System.Drawing.Size(655, 472);
             this.home.TabIndex = 0;
             this.home.Text = "HOME";
             // 
@@ -470,7 +483,7 @@
             this.pnlHome.Controls.Add(this.btnSaveProf);
             this.pnlHome.Location = new System.Drawing.Point(0, 33);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(646, 432);
+            this.pnlHome.Size = new System.Drawing.Size(659, 432);
             this.pnlHome.TabIndex = 10;
             // 
             // tbBlue
@@ -613,7 +626,7 @@
             this.btnSaveProf.TabIndex = 1;
             this.btnSaveProf.Text = "SAVE PROFILE";
             this.btnSaveProf.UseVisualStyleBackColor = false;
-            this.btnSaveProf.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnSaveProf.Click += new System.EventHandler(this.btbSaveProf_Click);
             // 
             // background
             // 
@@ -636,7 +649,7 @@
             this.cTab1.Padding = new System.Drawing.Point(28, 10);
             this.cTab1.PathColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.cTab1.SelectedIndex = 0;
-            this.cTab1.Size = new System.Drawing.Size(651, 515);
+            this.cTab1.Size = new System.Drawing.Size(663, 515);
             this.cTab1.TabIndex = 15;
             // 
             // btnClose
@@ -740,5 +753,6 @@
         private CTrackBar tbRed;
         private CTrackBar tbGreen;
         private CTrackBar tbBlue;
+        private CInfoButton cInfoButton1;
     }
 }
