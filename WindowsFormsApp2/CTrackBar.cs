@@ -13,11 +13,9 @@ namespace WindowsFormsApp2
     class CTrackBar: Control
     {
 
-        public int thumbOffset = 0;
+        public int thumbOffset = 100;
         private Rectangle Thumb;
-        private bool ThumbFocused;
         private bool mouseDown = false;
-        private bool iscrtano = false;
         private int maximum;
         private Color boja;
 
@@ -38,9 +36,10 @@ namespace WindowsFormsApp2
             set { maximum = value; }
         }
 
-        public int Vrijednost
+        public int Value
         {
             get { return thumbOffset; }
+            set { thumbOffset = value; }
         }
         private int ThumbOffset
         {
@@ -92,7 +91,6 @@ namespace WindowsFormsApp2
             base.OnClick(e);
             MouseEventArgs arg = (MouseEventArgs)e;
             this.ThumbOffset = arg.Location.X - 6;
-            iscrtano = true;
             this.Invalidate();
         }
         protected override void OnMouseDown(MouseEventArgs e)

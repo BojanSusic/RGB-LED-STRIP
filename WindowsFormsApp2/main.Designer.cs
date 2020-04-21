@@ -58,6 +58,7 @@
             this.btnProf1 = new System.Windows.Forms.Button();
             this.home = new System.Windows.Forms.TabPage();
             this.pnlHome = new System.Windows.Forms.Panel();
+            this.tbBlue = new WindowsFormsApp2.CTrackBar();
             this.tbGreen = new WindowsFormsApp2.CTrackBar();
             this.tbRed = new WindowsFormsApp2.CTrackBar();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -72,7 +73,6 @@
             this.cTab1 = new WindowsFormsApp2.CTab();
             this.btnClose = new WindowsFormsApp2.CButton();
             this.btnMinimize = new WindowsFormsApp2.CButton();
-            this.tbBlue = new WindowsFormsApp2.CTrackBar();
             this.contextMenuStrip1.SuspendLayout();
             this.profiles.SuspendLayout();
             this.pnlProfiles.SuspendLayout();
@@ -170,7 +170,7 @@
             this.btnProf20.Name = "btnProf20";
             this.btnProf20.Size = new System.Drawing.Size(254, 35);
             this.btnProf20.TabIndex = 0;
-            this.btnProf20.Text = "button2";
+            this.btnProf20.Text = "button20";
             this.btnProf20.UseVisualStyleBackColor = true;
             this.btnProf20.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -184,7 +184,7 @@
             this.btnProf10.Name = "btnProf10";
             this.btnProf10.Size = new System.Drawing.Size(254, 35);
             this.btnProf10.TabIndex = 0;
-            this.btnProf10.Text = "button2";
+            this.btnProf10.Text = "button10";
             this.btnProf10.UseVisualStyleBackColor = true;
             this.btnProf10.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -198,7 +198,7 @@
             this.btnProf19.Name = "btnProf19";
             this.btnProf19.Size = new System.Drawing.Size(254, 35);
             this.btnProf19.TabIndex = 0;
-            this.btnProf19.Text = "button2";
+            this.btnProf19.Text = "button19";
             this.btnProf19.UseVisualStyleBackColor = true;
             this.btnProf19.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -212,7 +212,7 @@
             this.btnProf9.Name = "btnProf9";
             this.btnProf9.Size = new System.Drawing.Size(254, 35);
             this.btnProf9.TabIndex = 0;
-            this.btnProf9.Text = "button2";
+            this.btnProf9.Text = "button9";
             this.btnProf9.UseVisualStyleBackColor = true;
             this.btnProf9.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -226,7 +226,7 @@
             this.btnProf18.Name = "btnProf18";
             this.btnProf18.Size = new System.Drawing.Size(254, 35);
             this.btnProf18.TabIndex = 0;
-            this.btnProf18.Text = "button2";
+            this.btnProf18.Text = "button18";
             this.btnProf18.UseVisualStyleBackColor = true;
             this.btnProf18.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -240,7 +240,7 @@
             this.btnProf8.Name = "btnProf8";
             this.btnProf8.Size = new System.Drawing.Size(254, 35);
             this.btnProf8.TabIndex = 0;
-            this.btnProf8.Text = "button2";
+            this.btnProf8.Text = "button8";
             this.btnProf8.UseVisualStyleBackColor = true;
             this.btnProf8.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -254,7 +254,7 @@
             this.btnProf17.Name = "btnProf17";
             this.btnProf17.Size = new System.Drawing.Size(254, 35);
             this.btnProf17.TabIndex = 0;
-            this.btnProf17.Text = "button2";
+            this.btnProf17.Text = "button17";
             this.btnProf17.UseVisualStyleBackColor = true;
             this.btnProf17.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -268,7 +268,7 @@
             this.btnProf7.Name = "btnProf7";
             this.btnProf7.Size = new System.Drawing.Size(254, 35);
             this.btnProf7.TabIndex = 0;
-            this.btnProf7.Text = "button2";
+            this.btnProf7.Text = "button7";
             this.btnProf7.UseVisualStyleBackColor = true;
             this.btnProf7.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -282,7 +282,7 @@
             this.btnProf16.Name = "btnProf16";
             this.btnProf16.Size = new System.Drawing.Size(254, 35);
             this.btnProf16.TabIndex = 0;
-            this.btnProf16.Text = "button2";
+            this.btnProf16.Text = "button16";
             this.btnProf16.UseVisualStyleBackColor = true;
             this.btnProf16.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -296,7 +296,7 @@
             this.btnProf6.Name = "btnProf6";
             this.btnProf6.Size = new System.Drawing.Size(254, 35);
             this.btnProf6.TabIndex = 0;
-            this.btnProf6.Text = "button2";
+            this.btnProf6.Text = "button6";
             this.btnProf6.UseVisualStyleBackColor = true;
             this.btnProf6.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -310,7 +310,7 @@
             this.btnProf15.Name = "btnProf15";
             this.btnProf15.Size = new System.Drawing.Size(254, 35);
             this.btnProf15.TabIndex = 0;
-            this.btnProf15.Text = "button2";
+            this.btnProf15.Text = "button15";
             this.btnProf15.UseVisualStyleBackColor = true;
             this.btnProf15.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -324,7 +324,7 @@
             this.btnProf14.Name = "btnProf14";
             this.btnProf14.Size = new System.Drawing.Size(254, 35);
             this.btnProf14.TabIndex = 0;
-            this.btnProf14.Text = "button2";
+            this.btnProf14.Text = "button14";
             this.btnProf14.UseVisualStyleBackColor = true;
             this.btnProf14.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -338,7 +338,7 @@
             this.btnProf5.Name = "btnProf5";
             this.btnProf5.Size = new System.Drawing.Size(254, 35);
             this.btnProf5.TabIndex = 0;
-            this.btnProf5.Text = "button2";
+            this.btnProf5.Text = "button5";
             this.btnProf5.UseVisualStyleBackColor = true;
             this.btnProf5.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -352,7 +352,7 @@
             this.btnProf13.Name = "btnProf13";
             this.btnProf13.Size = new System.Drawing.Size(254, 35);
             this.btnProf13.TabIndex = 0;
-            this.btnProf13.Text = "button2";
+            this.btnProf13.Text = "button13";
             this.btnProf13.UseVisualStyleBackColor = true;
             this.btnProf13.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -366,7 +366,7 @@
             this.btnProf4.Name = "btnProf4";
             this.btnProf4.Size = new System.Drawing.Size(254, 35);
             this.btnProf4.TabIndex = 0;
-            this.btnProf4.Text = "button2";
+            this.btnProf4.Text = "button4";
             this.btnProf4.UseVisualStyleBackColor = true;
             this.btnProf4.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -380,7 +380,7 @@
             this.btnProf12.Name = "btnProf12";
             this.btnProf12.Size = new System.Drawing.Size(254, 35);
             this.btnProf12.TabIndex = 0;
-            this.btnProf12.Text = "button2";
+            this.btnProf12.Text = "button12";
             this.btnProf12.UseVisualStyleBackColor = true;
             this.btnProf12.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -394,7 +394,7 @@
             this.btnProf3.Name = "btnProf3";
             this.btnProf3.Size = new System.Drawing.Size(254, 35);
             this.btnProf3.TabIndex = 0;
-            this.btnProf3.Text = "button2";
+            this.btnProf3.Text = "button3";
             this.btnProf3.UseVisualStyleBackColor = true;
             this.btnProf3.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -408,7 +408,7 @@
             this.btnProf11.Name = "btnProf11";
             this.btnProf11.Size = new System.Drawing.Size(254, 35);
             this.btnProf11.TabIndex = 0;
-            this.btnProf11.Text = "button2";
+            this.btnProf11.Text = "button11";
             this.btnProf11.UseVisualStyleBackColor = true;
             this.btnProf11.Click += new System.EventHandler(this.button00_Click);
             // 
@@ -472,7 +472,19 @@
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(646, 432);
             this.pnlHome.TabIndex = 10;
-            this.pnlHome.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // tbBlue
+            // 
+            this.tbBlue.Boja = System.Drawing.Color.Blue;
+            this.tbBlue.ForeColor = System.Drawing.Color.Blue;
+            this.tbBlue.Location = new System.Drawing.Point(69, 190);
+            this.tbBlue.Maximum = 255;
+            this.tbBlue.Name = "tbBlue";
+            this.tbBlue.Size = new System.Drawing.Size(261, 28);
+            this.tbBlue.TabIndex = 10;
+            this.tbBlue.Text = "cTrackBar1";
+            this.tbBlue.Value = 100;
+            this.tbBlue.ValueChanged += new System.EventHandler(this.tbBlue_ValueChanged);
             // 
             // tbGreen
             // 
@@ -484,6 +496,7 @@
             this.tbGreen.Size = new System.Drawing.Size(261, 28);
             this.tbGreen.TabIndex = 10;
             this.tbGreen.Text = "cTrackBar1";
+            this.tbGreen.Value = 100;
             this.tbGreen.ValueChanged += new System.EventHandler(this.tbGreen_ValueChanged);
             // 
             // tbRed
@@ -496,6 +509,7 @@
             this.tbRed.Size = new System.Drawing.Size(261, 28);
             this.tbRed.TabIndex = 10;
             this.tbRed.Text = "cTrackBar1";
+            this.tbRed.Value = 100;
             this.tbRed.ValueChanged += new System.EventHandler(this.tbRed_ValueChanged);
             // 
             // pictureBox8
@@ -583,8 +597,8 @@
             this.tbColorCode.Name = "tbColorCode";
             this.tbColorCode.Size = new System.Drawing.Size(135, 26);
             this.tbColorCode.TabIndex = 4;
-            this.tbColorCode.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.tbColorCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.tbColorCode.TextChanged += new System.EventHandler(this.tbColorCode_TextChanged);
+            this.tbColorCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbColorCode_KeyDown);
             // 
             // btnSaveProf
             // 
@@ -653,18 +667,6 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // tbBlue
-            // 
-            this.tbBlue.Boja = System.Drawing.Color.Blue;
-            this.tbBlue.ForeColor = System.Drawing.Color.Blue;
-            this.tbBlue.Location = new System.Drawing.Point(69, 190);
-            this.tbBlue.Maximum = 255;
-            this.tbBlue.Name = "tbBlue";
-            this.tbBlue.Size = new System.Drawing.Size(261, 28);
-            this.tbBlue.TabIndex = 10;
-            this.tbBlue.Text = "cTrackBar1";
-            this.tbBlue.ValueChanged += new System.EventHandler(this.tbBlue_ValueChanged);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,7 +682,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "LED STRIP CONTROL";
-            this.Load += new System.EventHandler(this.main_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.profiles.ResumeLayout(false);
             this.pnlProfiles.ResumeLayout(false);

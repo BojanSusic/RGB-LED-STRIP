@@ -20,11 +20,10 @@ namespace WindowsFormsApp2
         private Image image = Image.FromFile("SLike/slider.png");
         public static string[] nazivi = new string[20];
         //Start position of the sliders.
-        public Point tackaR=new Point(100,0);
+   /*     public Point tackaR=new Point(100,0);
         public Point tackaG = new Point(100, 0);
-        public Point tackaB = new Point(100, 0);
+        public Point tackaB = new Point(100, 0);*/
         private static SerialPort Arduino;
-        private int x;
 
 
         private static string indata="0";
@@ -36,6 +35,7 @@ namespace WindowsFormsApp2
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
+            promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
             set_Buttons_names();
             Arduino = new SerialPort();
             init(); //opens Arduino port
@@ -54,133 +54,12 @@ namespace WindowsFormsApp2
             this.Enabled = false;
             sav.StartPosition=FormStartPosition.Manual;
             sav.SetDesktopLocation(this.Left+190, this.Top+180);
-            sav.BackColor = Color.FromArgb(tackaR.X, tackaG.X, tackaB.X);
+            sav.BackColor = Color.FromArgb(tbRed.Value, tbGreen.Value,tbBlue.Value);
                 sav.Show();
             if (sav.Created == false)
                 this.Enabled = true;
             sav.FormClosed += (o, args) => { set_Buttons_names(); this.Enabled = true; };         
             
-        }
-
-        bool dozvolaR = false;
-        bool dozvolaG = false;
-        bool dozvolaB = false;
-
-        /// <summary>
-        /// Enables slider movement.
-        /// </summary>
-        /// <see cref="pictureBox1_MouseMove(object, MouseEventArgs)"/>
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            dozvolaR = true;
-        }
-
-      
-        /// <summary>
-        /// Disables slider movement.
-        /// Sets textbox text to hexadecimal.
-        /// </summary>
-        /// <see cref="pictureBox1_MouseMove(object, MouseEventArgs)"/>
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            dozvolaR = false;
-            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// Sets slider(pictureBox1) to received position, and changes BG color.
-        /// </summary>
-        /// <see cref="promjenaBoje(int, int, int)"/>
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(image,tackaR.X,tackaR.Y,7,15);
-            promjenaBoje(tackaR.X,tackaG.X,tackaB.X);
-        }
-        
-
-        private void main_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Sets slider(pictureBox2) to received position, and changes BG color.
-        /// </summary>
-        /// <see cref="promjenaBoje(int, int, int)"/>
-        private void pictureBox2_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(image, tackaG.X, tackaG.Y, 7, 15);
-            promjenaBoje(tackaR.X, tackaG.X, tackaB.X);
-        }
-
-        /// <summary>
-        /// Enables slider movement.
-        /// </summary>
-        /// <see cref="pictureBox2_MouseMove(object, MouseEventArgs)"/>
-        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-        {
-            dozvolaG = true;
-        }
-
-        /// <summary>
-        /// Disables slider movement.
-        /// Sets textbox text to hexadecimal.
-        /// </summary>
-        private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
-        {
-            dozvolaG = false;
-            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-
-        }
-
-        /// <summary>
-        /// Sets slider(picturebox2) position according to mouse position.
-        /// </summary>
-      
-
-        /// <summary>
-        /// Enables slider movement.
-        /// </summary>
-        /// <see cref="pictureBox2_MouseMove(object, MouseEventArgs)"/>
-        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
-        {
-            dozvolaB = true;
-        }
-
-        /// <summary>
-        /// Disables slider movement.
-        /// Sets textbox text to hexadecimal.
-        /// </summary>
-        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
-        {
-            dozvolaB = false;
-            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
-        }
-
-        /// <summary>
-        /// Sets slider(picturebox3) position according to mouse position.
-        /// </summary>
-        private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (dozvolaB)
-            {
-                x = tackaB.X;
-                if (e.X >= 0 && e.X <= 255)
-                    tackaB.X = e.X;
-               
-                //pictureBox3.Refresh();
-
-            }
-        }
-
-        /// <summary>
-        /// Sets slider(pictureBox3) to received position, and changes BG color.
-        /// </summary>
-        /// <see cref="promjenaBoje(int, int, int)"/>
-        private void pictureBox3_Paint_1(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawImage(image, tackaB.X, tackaB.Y, 7, 15);
-            promjenaBoje(tackaR.X, tackaG.X, tackaB.X); 
         }
 
         /// <summary>
@@ -194,13 +73,7 @@ namespace WindowsFormsApp2
             this.BackColor = Color.FromArgb(R, G, B);
         }
         
-        /// <summary>
-        /// Closes the form.
-        /// </summary>
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+  
 
         /// <summary>
         /// When icon in tray is double clicked, show the form.
@@ -260,17 +133,21 @@ namespace WindowsFormsApp2
                 if (e.X > 0 && e.Y > 0 && e.X<pictureBox8.Width && e.Y<pictureBox8.Height)
                 {
                     Color pixel = imp.GetPixel(e.X, e.Y);
-                    tackaR.X = pixel.R;
-                    tackaG.X = pixel.G;
-                    tackaB.X = pixel.B;
-                    //set value of tracbar
+                    tbRed.Value = pixel.R;
+                    tbGreen.Value = pixel.G;
+                    tbBlue.Value= pixel.B;
+                    promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
+                    tbRed.Invalidate();
+                    tbGreen.Invalidate();
+                    tbBlue.Invalidate();
+                    //set value of trackbar
                 }
             }
         }
         /// <summary>
         /// Set sliders to inserted text.
         /// </summary>
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void tbColorCode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -278,16 +155,17 @@ namespace WindowsFormsApp2
                 {
                     try
                     {
-                        tackaR.X = Convert.ToInt32(Convert.ToString(tbColorCode.Text[1]) + Convert.ToString(tbColorCode.Text[2]), 16);
-                        tackaG.X = Convert.ToInt32(Convert.ToString(tbColorCode.Text[3]) + Convert.ToString(tbColorCode.Text[4]), 16);
-                        tackaB.X = Convert.ToInt32(Convert.ToString(tbColorCode.Text[5]) + Convert.ToString(tbColorCode.Text[6]), 16);
-                        if(Arduino.IsOpen)
+                        tbRed.Value = Convert.ToInt32(Convert.ToString(tbColorCode.Text[1]) + Convert.ToString(tbColorCode.Text[2]), 16);
+                        tbGreen.Value= Convert.ToInt32(Convert.ToString(tbColorCode.Text[3]) + Convert.ToString(tbColorCode.Text[4]), 16);
+                        tbBlue.Value = Convert.ToInt32(Convert.ToString(tbColorCode.Text[5]) + Convert.ToString(tbColorCode.Text[6]), 16);
+                        tbRed.Invalidate();
+                        tbGreen.Invalidate();
+                        tbBlue.Invalidate();
+                        promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
+                        if (Arduino.IsOpen)
                             send_To_Arduino();
                         else
                             MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
-                      //  pictureBox1.Refresh();
-                      // pictureBox2.Refresh();
-                     //   pictureBox3.Refresh();
                     }
                     catch (Exception)
                     {
@@ -299,9 +177,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
+       
         /// <summary>
         /// Reads buttons.xml and sets button labels to node "ime".
         /// If not possible, shows warning.
@@ -334,13 +210,10 @@ namespace WindowsFormsApp2
             DataSet dsProfiles = new DataSet();
             dsProfiles.ReadXml("buttons.xml");
             int set = int.Parse(dsProfiles.Tables[0].Rows[btnnumber-1].ItemArray[1].ToString());
-            tackaB.X = set % 1000;
-            tackaG.X = (set / 1000) % 1000;
-            tackaR.X = set / 1000000;
-           // pictureBox1.Refresh();
-          //  pictureBox2.Refresh();
-            //pictureBox3.Refresh();
-            promjenaBoje(tackaR.X, tackaG.X, tackaB.X);
+            tbBlue.Value = set % 1000;
+            tbGreen.Value= (set / 1000) % 1000;
+            tbRed.Value = set / 1000000;
+            promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
         }
 
         /// <summary>
@@ -350,7 +223,7 @@ namespace WindowsFormsApp2
         {
             Button btn = (Button)sender;
             get_Buttons_sets(int.Parse(Regex.Match(btn.Name, @"\d+").Value));
-            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
         }
 
         /// <summary>
@@ -369,18 +242,18 @@ namespace WindowsFormsApp2
         /// </summary>
         private void send_To_Arduino() {
 
-            if (cbEffects.SelectedItem == "NONE" )
+            if (cbEffects.SelectedItem.ToString() == "NONE" )
             {
-                Arduino.WriteLine(tackaR.X.ToString("D3") + tackaG.X.ToString("D3") + tackaB.X.ToString("D3"));
+                Arduino.WriteLine(tbRed.Value.ToString("D3") + tbGreen.Value.ToString("D3") + tbBlue.Value.ToString("D3"));
             }
-            else if(cbEffects.SelectedItem=="FADE") {
+            else if(cbEffects.SelectedItem.ToString()=="FADE") {
                 Arduino.WriteLine("FADE00000");
             }
-            else if (cbEffects.SelectedItem == "RAINBOW")
+            else if (cbEffects.SelectedItem.ToString() == "RAINBOW")
             {
                 Arduino.WriteLine("RAINBOW00");
             }
-            else if (cbEffects.SelectedItem == "BLINK")
+            else if (cbEffects.SelectedItem.ToString() == "BLINK")
             {
                 Arduino.WriteLine("BLINK0000");
             }
@@ -442,7 +315,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// When text is changed, sends message to arduino if port is open.
         /// </summary>
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void tbColorCode_TextChanged(object sender, EventArgs e)
         {
             if (Arduino.IsOpen)
             {
@@ -485,7 +358,7 @@ namespace WindowsFormsApp2
         /// </summary>
         private void pictureBox8_MouseUp(object sender, MouseEventArgs e)
         {
-            tbColorCode.Text = "#" + tackaR.X.ToString("X2") + tackaG.X.ToString("X2") + tackaB.X.ToString("X2");
+            tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
         }
 
         /// <summary>
@@ -499,12 +372,13 @@ namespace WindowsFormsApp2
                 if (e.X > 0 && e.Y > 0 && e.X < pictureBox8.Width && e.Y < pictureBox8.Height)
                 {
                     Color pixel = imp.GetPixel(e.X, e.Y);
-                    tackaR.X = pixel.R;
-                    tackaG.X = pixel.G;
-                    tackaB.X = pixel.B;
-                 //   pictureBox1.Refresh();
-                 //   pictureBox2.Refresh();
-                    //pictureBox3.Refresh();
+                    tbRed.Value = pixel.R;
+                    tbGreen.Value = pixel.G;
+                    tbBlue.Value = pixel.B;
+                    promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
+                    tbRed.Invalidate();
+                    tbGreen.Invalidate();
+                    tbBlue.Invalidate();
                 }
             }
         }
@@ -531,20 +405,20 @@ namespace WindowsFormsApp2
 
         private void tbRed_ValueChanged(object sender, EventArgs e)
         {
-            tbColorCode.Text = "#" + tbRed.Vrijednost.ToString("X2") + tbGreen.Vrijednost.ToString("X2") + tbBlue.Vrijednost.ToString("X2");
-            promjenaBoje(tbRed.Vrijednost, tbGreen.Vrijednost, tbBlue.Vrijednost);
+            tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
+            promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
         }
 
         private void tbGreen_ValueChanged(object sender, EventArgs e)
         {
-            tbColorCode.Text = "#" + tbRed.Vrijednost.ToString("X2") + tbGreen.Vrijednost.ToString("X2") + tbBlue.Vrijednost.ToString("X2");
-            promjenaBoje(tbRed.Vrijednost, tbGreen.Vrijednost, tbBlue.Vrijednost);
+            tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
+            promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
 
         }
         private void tbBlue_ValueChanged(object sender, EventArgs e)
         {
-            tbColorCode.Text = "#" + tbRed.Vrijednost.ToString("X2") + tbGreen.Vrijednost.ToString("X2") + tbBlue.Vrijednost.ToString("X2");
-            promjenaBoje(tbRed.Vrijednost, tbGreen.Vrijednost, tbBlue.Vrijednost);
+            tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
+            promjenaBoje(tbRed.Value, tbGreen.Value, tbBlue.Value);
 
         }
     }
