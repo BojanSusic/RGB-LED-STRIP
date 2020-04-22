@@ -137,10 +137,10 @@
             // cInfoButton1
             // 
             this.cInfoButton1.BorderColor = System.Drawing.Color.Red;
-            this.cInfoButton1.Location = new System.Drawing.Point(624, 91);
+            this.cInfoButton1.Location = new System.Drawing.Point(622, 91);
             this.cInfoButton1.Name = "cInfoButton1";
             this.cInfoButton1.Size = new System.Drawing.Size(36, 205);
-            this.cInfoButton1.TabIndex = 20;
+            this.cInfoButton1.TabIndex = 15;
             this.cInfoButton1.Text = "cInfoButton1";
             this.cInfoButton1.UseVisualStyleBackColor = true;
             this.cInfoButton1.Click += new System.EventHandler(this.cInfoButton1_Click);
@@ -182,7 +182,7 @@
             this.btnProf20.Location = new System.Drawing.Point(334, 379);
             this.btnProf20.Name = "btnProf20";
             this.btnProf20.Size = new System.Drawing.Size(254, 35);
-            this.btnProf20.TabIndex = 19;
+            this.btnProf20.TabIndex = 0;
             this.btnProf20.Text = "button20";
             this.btnProf20.UseVisualStyleBackColor = true;
             this.btnProf20.Click += new System.EventHandler(this.button00_Click);
@@ -196,7 +196,7 @@
             this.btnProf10.Location = new System.Drawing.Point(25, 379);
             this.btnProf10.Name = "btnProf10";
             this.btnProf10.Size = new System.Drawing.Size(254, 35);
-            this.btnProf10.TabIndex = 9;
+            this.btnProf10.TabIndex = 0;
             this.btnProf10.Text = "button10";
             this.btnProf10.UseVisualStyleBackColor = true;
             this.btnProf10.Click += new System.EventHandler(this.button00_Click);
@@ -210,7 +210,7 @@
             this.btnProf19.Location = new System.Drawing.Point(334, 338);
             this.btnProf19.Name = "btnProf19";
             this.btnProf19.Size = new System.Drawing.Size(254, 35);
-            this.btnProf19.TabIndex = 18;
+            this.btnProf19.TabIndex = 0;
             this.btnProf19.Text = "button19";
             this.btnProf19.UseVisualStyleBackColor = true;
             this.btnProf19.Click += new System.EventHandler(this.button00_Click);
@@ -224,7 +224,7 @@
             this.btnProf9.Location = new System.Drawing.Point(25, 338);
             this.btnProf9.Name = "btnProf9";
             this.btnProf9.Size = new System.Drawing.Size(254, 35);
-            this.btnProf9.TabIndex = 8;
+            this.btnProf9.TabIndex = 0;
             this.btnProf9.Text = "button9";
             this.btnProf9.UseVisualStyleBackColor = true;
             this.btnProf9.Click += new System.EventHandler(this.button00_Click);
@@ -238,7 +238,7 @@
             this.btnProf18.Location = new System.Drawing.Point(334, 297);
             this.btnProf18.Name = "btnProf18";
             this.btnProf18.Size = new System.Drawing.Size(254, 35);
-            this.btnProf18.TabIndex = 17;
+            this.btnProf18.TabIndex = 0;
             this.btnProf18.Text = "button18";
             this.btnProf18.UseVisualStyleBackColor = true;
             this.btnProf18.Click += new System.EventHandler(this.button00_Click);
@@ -252,7 +252,7 @@
             this.btnProf8.Location = new System.Drawing.Point(25, 297);
             this.btnProf8.Name = "btnProf8";
             this.btnProf8.Size = new System.Drawing.Size(254, 35);
-            this.btnProf8.TabIndex = 7;
+            this.btnProf8.TabIndex = 0;
             this.btnProf8.Text = "button8";
             this.btnProf8.UseVisualStyleBackColor = true;
             this.btnProf8.Click += new System.EventHandler(this.button00_Click);
@@ -266,7 +266,7 @@
             this.btnProf17.Location = new System.Drawing.Point(334, 256);
             this.btnProf17.Name = "btnProf17";
             this.btnProf17.Size = new System.Drawing.Size(254, 35);
-            this.btnProf17.TabIndex = 16;
+            this.btnProf17.TabIndex = 0;
             this.btnProf17.Text = "button17";
             this.btnProf17.UseVisualStyleBackColor = true;
             this.btnProf17.Click += new System.EventHandler(this.button00_Click);
@@ -280,7 +280,7 @@
             this.btnProf7.Location = new System.Drawing.Point(25, 256);
             this.btnProf7.Name = "btnProf7";
             this.btnProf7.Size = new System.Drawing.Size(254, 35);
-            this.btnProf7.TabIndex = 6;
+            this.btnProf7.TabIndex = 0;
             this.btnProf7.Text = "button7";
             this.btnProf7.UseVisualStyleBackColor = true;
             this.btnProf7.Click += new System.EventHandler(this.button00_Click);
@@ -294,7 +294,7 @@
             this.btnProf16.Location = new System.Drawing.Point(334, 215);
             this.btnProf16.Name = "btnProf16";
             this.btnProf16.Size = new System.Drawing.Size(254, 35);
-            this.btnProf16.TabIndex = 15;
+            this.btnProf16.TabIndex = 0;
             this.btnProf16.Text = "button16";
             this.btnProf16.UseVisualStyleBackColor = true;
             this.btnProf16.Click += new System.EventHandler(this.button00_Click);
@@ -308,7 +308,7 @@
             this.btnProf6.Location = new System.Drawing.Point(25, 215);
             this.btnProf6.Name = "btnProf6";
             this.btnProf6.Size = new System.Drawing.Size(254, 35);
-            this.btnProf6.TabIndex = 5;
+            this.btnProf6.TabIndex = 0;
             this.btnProf6.Text = "button6";
             this.btnProf6.UseVisualStyleBackColor = true;
             this.btnProf6.Click += new System.EventHandler(this.button00_Click);
@@ -322,7 +322,7 @@
             this.btnProf15.Location = new System.Drawing.Point(334, 174);
             this.btnProf15.Name = "btnProf15";
             this.btnProf15.Size = new System.Drawing.Size(254, 35);
-            this.btnProf15.TabIndex = 14;
+            this.btnProf15.TabIndex = 0;
             this.btnProf15.Text = "button15";
             this.btnProf15.UseVisualStyleBackColor = true;
             this.btnProf15.Click += new System.EventHandler(this.button00_Click);
@@ -336,7 +336,7 @@
             this.btnProf14.Location = new System.Drawing.Point(334, 133);
             this.btnProf14.Name = "btnProf14";
             this.btnProf14.Size = new System.Drawing.Size(254, 35);
-            this.btnProf14.TabIndex = 13;
+            this.btnProf14.TabIndex = 0;
             this.btnProf14.Text = "button14";
             this.btnProf14.UseVisualStyleBackColor = true;
             this.btnProf14.Click += new System.EventHandler(this.button00_Click);
@@ -350,7 +350,7 @@
             this.btnProf5.Location = new System.Drawing.Point(25, 174);
             this.btnProf5.Name = "btnProf5";
             this.btnProf5.Size = new System.Drawing.Size(254, 35);
-            this.btnProf5.TabIndex = 4;
+            this.btnProf5.TabIndex = 0;
             this.btnProf5.Text = "button5";
             this.btnProf5.UseVisualStyleBackColor = true;
             this.btnProf5.Click += new System.EventHandler(this.button00_Click);
@@ -364,7 +364,7 @@
             this.btnProf13.Location = new System.Drawing.Point(334, 92);
             this.btnProf13.Name = "btnProf13";
             this.btnProf13.Size = new System.Drawing.Size(254, 35);
-            this.btnProf13.TabIndex = 12;
+            this.btnProf13.TabIndex = 0;
             this.btnProf13.Text = "button13";
             this.btnProf13.UseVisualStyleBackColor = true;
             this.btnProf13.Click += new System.EventHandler(this.button00_Click);
@@ -378,7 +378,7 @@
             this.btnProf4.Location = new System.Drawing.Point(25, 133);
             this.btnProf4.Name = "btnProf4";
             this.btnProf4.Size = new System.Drawing.Size(254, 35);
-            this.btnProf4.TabIndex = 3;
+            this.btnProf4.TabIndex = 0;
             this.btnProf4.Text = "button4";
             this.btnProf4.UseVisualStyleBackColor = true;
             this.btnProf4.Click += new System.EventHandler(this.button00_Click);
@@ -392,7 +392,7 @@
             this.btnProf12.Location = new System.Drawing.Point(334, 51);
             this.btnProf12.Name = "btnProf12";
             this.btnProf12.Size = new System.Drawing.Size(254, 35);
-            this.btnProf12.TabIndex = 11;
+            this.btnProf12.TabIndex = 0;
             this.btnProf12.Text = "button12";
             this.btnProf12.UseVisualStyleBackColor = true;
             this.btnProf12.Click += new System.EventHandler(this.button00_Click);
@@ -406,7 +406,7 @@
             this.btnProf3.Location = new System.Drawing.Point(25, 92);
             this.btnProf3.Name = "btnProf3";
             this.btnProf3.Size = new System.Drawing.Size(254, 35);
-            this.btnProf3.TabIndex = 2;
+            this.btnProf3.TabIndex = 0;
             this.btnProf3.Text = "button3";
             this.btnProf3.UseVisualStyleBackColor = true;
             this.btnProf3.Click += new System.EventHandler(this.button00_Click);
@@ -420,7 +420,7 @@
             this.btnProf11.Location = new System.Drawing.Point(334, 10);
             this.btnProf11.Name = "btnProf11";
             this.btnProf11.Size = new System.Drawing.Size(254, 35);
-            this.btnProf11.TabIndex = 10;
+            this.btnProf11.TabIndex = 0;
             this.btnProf11.Text = "button11";
             this.btnProf11.UseVisualStyleBackColor = true;
             this.btnProf11.Click += new System.EventHandler(this.button00_Click);
@@ -434,7 +434,7 @@
             this.btnProf2.Location = new System.Drawing.Point(25, 51);
             this.btnProf2.Name = "btnProf2";
             this.btnProf2.Size = new System.Drawing.Size(254, 35);
-            this.btnProf2.TabIndex = 1;
+            this.btnProf2.TabIndex = 0;
             this.btnProf2.Text = "button2";
             this.btnProf2.UseVisualStyleBackColor = true;
             this.btnProf2.Click += new System.EventHandler(this.button00_Click);

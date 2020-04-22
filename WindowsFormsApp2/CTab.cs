@@ -123,6 +123,7 @@ namespace WindowsFormsApp2
             format.Trimming = StringTrimming.EllipsisCharacter;
             SolidBrush forebrush = new SolidBrush(TabPages[index].ForeColor);
             graph.DrawString(tab.Text, tab.Font, new SolidBrush(tab.ForeColor), rect, format);
+
         }
     }
 }

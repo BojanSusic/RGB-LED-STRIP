@@ -16,6 +16,8 @@ namespace WindowsFormsApp2
     
     public partial class Main : Form
     {
+      
+        private Image image = Image.FromFile("SLike/slider.png");
         private static SerialPort Arduino;
         private static string indata="0";
         private static bool connected = false;
@@ -26,7 +28,7 @@ namespace WindowsFormsApp2
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-            ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+            ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
             set_Buttons_names();
             Arduino = new SerialPort();
             init(); //opens Arduino port
@@ -59,7 +61,7 @@ namespace WindowsFormsApp2
         /// <param name="R"></param>
         /// <param name="G"></param>
         /// <param name="B"></param>
-        private void ColorChange(int R,int G, int B)
+        private void ChangeColor(int R,int G, int B)
         {
             this.BackColor = Color.FromArgb(R, G, B);
             cInfoButton1.BorderColor = Color.FromArgb(R, G, B);
@@ -106,7 +108,7 @@ namespace WindowsFormsApp2
                     tbRed.Value = pixel.R;
                     tbGreen.Value = pixel.G;
                     tbBlue.Value= pixel.B;
-                    ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+                    ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
                     tbRed.Invalidate();
                     tbGreen.Invalidate();
                     tbBlue.Invalidate();
@@ -131,7 +133,7 @@ namespace WindowsFormsApp2
                         tbRed.Invalidate();
                         tbGreen.Invalidate();
                         tbBlue.Invalidate();
-                        ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+                        ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
                         if (Arduino.IsOpen)
                             send_To_Arduino();
                         else
@@ -160,7 +162,9 @@ namespace WindowsFormsApp2
                 for (int i = 0; i < 20; i++) {
                     btnsProfiles.Add(pnlProfiles.Controls[19 - i] as Button);
                 }
+               
                 btnsProfiles = SortList(btnsProfiles);
+                
                 DataSet dsProfiles = new DataSet();
                 dsProfiles.ReadXml("buttons.xml");
                 for (int i = 0; i < 20; i++)
@@ -206,7 +210,7 @@ namespace WindowsFormsApp2
             tbBlue.Value = set % 1000;
             tbGreen.Value= (set / 1000) % 1000;
             tbRed.Value = set / 1000000;
-            ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+            ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
         }
 
         /// <summary>
@@ -234,26 +238,22 @@ namespace WindowsFormsApp2
         /// or send name of effect
         /// </summary>
         private void send_To_Arduino() {
-            try
+
+            if (cbEffects.SelectedItem.ToString() == "NONE" )
             {
-                if (cbEffects.SelectedItem.ToString() == "NONE")
-                {
-                    Arduino.WriteLine(tbRed.Value.ToString("D3") + tbGreen.Value.ToString("D3") + tbBlue.Value.ToString("D3"));
-                }
-                else if (cbEffects.SelectedItem.ToString() == "FADE")
-                {
-                    Arduino.WriteLine("FADE00000");
-                }
-                else if (cbEffects.SelectedItem.ToString() == "RAINBOW")
-                {
-                    Arduino.WriteLine("RAINBOW00");
-                }
-                else if (cbEffects.SelectedItem.ToString() == "BLINK")
-                {
-                    Arduino.WriteLine("BLINK0000");
-                }
+                Arduino.WriteLine(tbRed.Value.ToString("D3") + tbGreen.Value.ToString("D3") + tbBlue.Value.ToString("D3"));
             }
-            catch { }
+            else if(cbEffects.SelectedItem.ToString()=="FADE") {
+                Arduino.WriteLine("FADE00000");
+            }
+            else if (cbEffects.SelectedItem.ToString() == "RAINBOW")
+            {
+                Arduino.WriteLine("RAINBOW00");
+            }
+            else if (cbEffects.SelectedItem.ToString() == "BLINK")
+            {
+                Arduino.WriteLine("BLINK0000");
+            }
         }
 
         private static void DataReceivedHandler(object sender,SerialDataReceivedEventArgs e)
@@ -337,6 +337,7 @@ namespace WindowsFormsApp2
         /// </summary>
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
         }
@@ -371,7 +372,7 @@ namespace WindowsFormsApp2
                     tbRed.Value = pixel.R;
                     tbGreen.Value = pixel.G;
                     tbBlue.Value = pixel.B;
-                    ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+                    ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
                     tbRed.Invalidate();
                     tbGreen.Invalidate();
                     tbBlue.Invalidate();
@@ -386,6 +387,7 @@ namespace WindowsFormsApp2
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
+
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -401,35 +403,35 @@ namespace WindowsFormsApp2
         private void tbRed_ValueChanged(object sender, EventArgs e)
         {
             tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
-            ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+            ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
         }
 
         private void tbGreen_ValueChanged(object sender, EventArgs e)
         {
             tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
-            ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+            ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
 
         }
         private void tbBlue_ValueChanged(object sender, EventArgs e)
         {
             tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
-            ColorChange(tbRed.Value, tbGreen.Value, tbBlue.Value);
+            ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
 
         }
 
         private void cInfoButton1_Click(object sender, EventArgs e)
         {
             //MEMORY!!!
-            
-            Info info = new Info();
-            info.ShowInTaskbar = false;
-            this.Enabled = false;
-            info.StartPosition = FormStartPosition.Manual;
-            info.SetDesktopLocation(this.Left + 140, this.Top);
-            info.Show();
-            if (info.Created == false)
-                this.Enabled = true;
-            info.FormClosed += (o, args) => { this.Enabled = true; };
+          
+                Info info = new Info();
+                info.ShowInTaskbar = false;
+                this.Enabled = false;
+                info.StartPosition = FormStartPosition.Manual;
+                info.SetDesktopLocation(this.Left + 140, this.Top);
+                info.Show();
+                if (info.Created == false)
+                    this.Enabled = true;
+                info.FormClosed += (o, args) => { this.Enabled = true; };
             
         }
     }

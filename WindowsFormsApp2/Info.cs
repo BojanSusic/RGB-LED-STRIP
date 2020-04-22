@@ -43,7 +43,7 @@ namespace WindowsFormsApp2
             System.Windows.Forms.Clipboard.SetText("bojansusic8@gmail.com");
             lblNotif.Show();
             //?
-            Task.Delay(6000).Wait();
+            Task.Delay(8000).Wait();
             lblNotif.Hide();
         }
     }

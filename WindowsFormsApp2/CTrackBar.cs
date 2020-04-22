@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    class CTrackBar : Control
+    class CTrackBar: Control
     {
 
         public int thumbOffset = 100;
