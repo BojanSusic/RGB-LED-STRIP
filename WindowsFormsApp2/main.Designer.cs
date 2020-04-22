@@ -62,7 +62,7 @@
             this.tbBlue = new WindowsFormsApp2.CTrackBar();
             this.tbGreen = new WindowsFormsApp2.CTrackBar();
             this.tbRed = new WindowsFormsApp2.CTrackBar();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.colorPicker = new System.Windows.Forms.PictureBox();
             this.lblFX = new System.Windows.Forms.Label();
             this.lblB = new System.Windows.Forms.Label();
             this.lblG = new System.Windows.Forms.Label();
@@ -74,12 +74,13 @@
             this.cTab1 = new WindowsFormsApp2.CTab();
             this.btnClose = new WindowsFormsApp2.CButton();
             this.btnMinimize = new WindowsFormsApp2.CButton();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.profiles.SuspendLayout();
             this.pnlProfiles.SuspendLayout();
             this.home.SuspendLayout();
             this.pnlHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             this.cTab1.SuspendLayout();
             this.SuspendLayout();
@@ -130,16 +131,16 @@
             this.profiles.Name = "profiles";
             this.profiles.Padding = new System.Windows.Forms.Padding(3);
             this.profiles.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.profiles.Size = new System.Drawing.Size(655, 472);
+            this.profiles.Size = new System.Drawing.Size(650, 472);
             this.profiles.TabIndex = 1;
             this.profiles.Text = "PROFILES";
             // 
             // cInfoButton1
             // 
             this.cInfoButton1.BorderColor = System.Drawing.Color.Red;
-            this.cInfoButton1.Location = new System.Drawing.Point(622, 91);
+            this.cInfoButton1.Location = new System.Drawing.Point(618, 91);
             this.cInfoButton1.Name = "cInfoButton1";
-            this.cInfoButton1.Size = new System.Drawing.Size(36, 205);
+            this.cInfoButton1.Size = new System.Drawing.Size(41, 205);
             this.cInfoButton1.TabIndex = 15;
             this.cInfoButton1.Text = "cInfoButton1";
             this.cInfoButton1.UseVisualStyleBackColor = true;
@@ -463,7 +464,7 @@
             this.home.Location = new System.Drawing.Point(4, 39);
             this.home.Name = "home";
             this.home.Padding = new System.Windows.Forms.Padding(3);
-            this.home.Size = new System.Drawing.Size(655, 472);
+            this.home.Size = new System.Drawing.Size(650, 472);
             this.home.TabIndex = 0;
             this.home.Text = "HOME";
             // 
@@ -473,7 +474,7 @@
             this.pnlHome.Controls.Add(this.tbBlue);
             this.pnlHome.Controls.Add(this.tbGreen);
             this.pnlHome.Controls.Add(this.tbRed);
-            this.pnlHome.Controls.Add(this.pictureBox8);
+            this.pnlHome.Controls.Add(this.colorPicker);
             this.pnlHome.Controls.Add(this.lblFX);
             this.pnlHome.Controls.Add(this.lblB);
             this.pnlHome.Controls.Add(this.lblG);
@@ -496,6 +497,7 @@
             this.tbBlue.Size = new System.Drawing.Size(261, 28);
             this.tbBlue.TabIndex = 10;
             this.tbBlue.Text = "cTrackBar1";
+            this.tbBlue.ThumbOffset = 100;
             this.tbBlue.Value = 100;
             this.tbBlue.ValueChanged += new System.EventHandler(this.tbBlue_ValueChanged);
             // 
@@ -509,6 +511,7 @@
             this.tbGreen.Size = new System.Drawing.Size(261, 28);
             this.tbGreen.TabIndex = 10;
             this.tbGreen.Text = "cTrackBar1";
+            this.tbGreen.ThumbOffset = 100;
             this.tbGreen.Value = 100;
             this.tbGreen.ValueChanged += new System.EventHandler(this.tbGreen_ValueChanged);
             // 
@@ -522,21 +525,22 @@
             this.tbRed.Size = new System.Drawing.Size(261, 28);
             this.tbRed.TabIndex = 10;
             this.tbRed.Text = "cTrackBar1";
+            this.tbRed.ThumbOffset = 100;
             this.tbRed.Value = 100;
             this.tbRed.ValueChanged += new System.EventHandler(this.tbRed_ValueChanged);
             // 
-            // pictureBox8
+            // colorPicker
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(412, 17);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(187, 195);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox8.TabIndex = 9;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseClick);
-            this.pictureBox8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseMove);
-            this.pictureBox8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox8_MouseUp);
+            this.colorPicker.Image = ((System.Drawing.Image)(resources.GetObject("colorPicker.Image")));
+            this.colorPicker.Location = new System.Drawing.Point(412, 17);
+            this.colorPicker.Name = "colorPicker";
+            this.colorPicker.Size = new System.Drawing.Size(187, 195);
+            this.colorPicker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.colorPicker.TabIndex = 9;
+            this.colorPicker.TabStop = false;
+            this.colorPicker.MouseClick += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseClick);
+            this.colorPicker.MouseMove += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseMove);
+            this.colorPicker.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseUp);
             // 
             // lblFX
             // 
@@ -637,19 +641,18 @@
             this.background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.background.TabIndex = 16;
             this.background.TabStop = false;
-            this.background.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // cTab1
             // 
             this.cTab1.Controls.Add(this.home);
             this.cTab1.Controls.Add(this.profiles);
             this.cTab1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.cTab1.Location = new System.Drawing.Point(12, 23);
+            this.cTab1.Location = new System.Drawing.Point(5, 23);
             this.cTab1.Name = "cTab1";
             this.cTab1.Padding = new System.Drawing.Point(28, 10);
             this.cTab1.PathColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.cTab1.SelectedIndex = 0;
-            this.cTab1.Size = new System.Drawing.Size(663, 515);
+            this.cTab1.Size = new System.Drawing.Size(658, 515);
             this.cTab1.TabIndex = 15;
             // 
             // btnClose
@@ -680,6 +683,10 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -701,7 +708,7 @@
             this.home.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
             this.pnlHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             this.cTab1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -738,7 +745,7 @@
         private System.Windows.Forms.Button btnProf1;
         private System.Windows.Forms.TabPage home;
         private System.Windows.Forms.Panel pnlHome;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox colorPicker;
         private System.Windows.Forms.Label lblFX;
         private System.Windows.Forms.Label lblB;
         private System.Windows.Forms.Label lblG;
@@ -754,5 +761,6 @@
         private CTrackBar tbGreen;
         private CTrackBar tbBlue;
         private CInfoButton cInfoButton1;
+        private System.Windows.Forms.Timer timer;
     }
 }

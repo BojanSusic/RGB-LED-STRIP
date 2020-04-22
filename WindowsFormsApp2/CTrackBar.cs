@@ -39,9 +39,9 @@ namespace WindowsFormsApp2
         public int Value
         {
             get { return thumbOffset; }
-            set { thumbOffset = value; }
+            set { thumbOffset = value; Invalidate(); }
         }
-        private int ThumbOffset
+        public int ThumbOffset
         {
             get { return thumbOffset; }
             set
@@ -54,6 +54,7 @@ namespace WindowsFormsApp2
                     thumbOffset = value;
 
                 if (ValueChanged != null) ValueChanged(this, new EventArgs());
+                Invalidate();
             }
         }
         public Color Boja

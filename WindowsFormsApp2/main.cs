@@ -21,6 +21,7 @@ namespace WindowsFormsApp2
         private static SerialPort Arduino;
         private static string indata="0";
         private static bool connected = false;
+        Color pixel;
         /// <summary>
         /// Main screen of application.
         /// </summary>
@@ -29,9 +30,9 @@ namespace WindowsFormsApp2
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
-            set_Buttons_names();
+            SetButtonsNames();
             Arduino = new SerialPort();
-            init(); //opens Arduino port
+            Init(); //opens Arduino port
         }
        
         /// <summary>
@@ -51,7 +52,7 @@ namespace WindowsFormsApp2
                 sav.Show();
             if (sav.Created == false)
                 this.Enabled = true;
-            sav.FormClosed += (o, args) => { set_Buttons_names(); this.Enabled = true; };         
+            sav.FormClosed += (o, args) => { SetButtonsNames(); this.Enabled = true; };         
             
         }
 
@@ -98,21 +99,18 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Get color of selected pixel and set sliders at those values.
         /// </summary>
-        private void pictureBox8_MouseMove(object sender, MouseEventArgs e)
+        private void colorPicker_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) {
-                Bitmap imp = new Bitmap(pictureBox8.Image);
-                if (e.X > 0 && e.Y > 0 && e.X<pictureBox8.Width && e.Y<pictureBox8.Height)
+                Bitmap imp = new Bitmap(colorPicker.Image);
+                if (e.X > 0 && e.Y > 0 && e.X<colorPicker.Width && e.Y<colorPicker.Height)
                 {
                     Color pixel = imp.GetPixel(e.X, e.Y);
-                    tbRed.Value = pixel.R;
+                  /*  tbRed.Value = pixel.R;
                     tbGreen.Value = pixel.G;
-                    tbBlue.Value= pixel.B;
-                    ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
-                    tbRed.Invalidate();
-                    tbGreen.Invalidate();
-                    tbBlue.Invalidate();
-                    //set value of trackbar
+                    tbBlue.Value= pixel.B;*/
+                    ChangeColor(pixel.R, pixel.G, pixel.B);
+                
                 }
             }
         }
@@ -130,12 +128,9 @@ namespace WindowsFormsApp2
                         tbRed.Value = Convert.ToInt32(Convert.ToString(tbColorCode.Text[1]) + Convert.ToString(tbColorCode.Text[2]), 16);
                         tbGreen.Value= Convert.ToInt32(Convert.ToString(tbColorCode.Text[3]) + Convert.ToString(tbColorCode.Text[4]), 16);
                         tbBlue.Value = Convert.ToInt32(Convert.ToString(tbColorCode.Text[5]) + Convert.ToString(tbColorCode.Text[6]), 16);
-                        tbRed.Invalidate();
-                        tbGreen.Invalidate();
-                        tbBlue.Invalidate();
                         ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
                         if (Arduino.IsOpen)
-                            send_To_Arduino();
+                            SendToArduino();
                         else
                             MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
                     }
@@ -154,7 +149,7 @@ namespace WindowsFormsApp2
         /// Reads buttons.xml and sets button labels to node "ime".
         /// If not possible, shows warning.
         /// </summary>
-        private void set_Buttons_names() { 
+        private void SetButtonsNames() { 
             try
             {
                 List<Button> btnsProfiles = new List<Button>();
@@ -162,9 +157,7 @@ namespace WindowsFormsApp2
                 for (int i = 0; i < 20; i++) {
                     btnsProfiles.Add(pnlProfiles.Controls[19 - i] as Button);
                 }
-               
                 btnsProfiles = SortList(btnsProfiles);
-                
                 DataSet dsProfiles = new DataSet();
                 dsProfiles.ReadXml("buttons.xml");
                 for (int i = 0; i < 20; i++)
@@ -229,7 +222,7 @@ namespace WindowsFormsApp2
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(Arduino.IsOpen)
-                send_To_Arduino();
+                SendToArduino();
             else
                 MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
         }
@@ -237,7 +230,7 @@ namespace WindowsFormsApp2
         /// If selected item in comboBox1 is "NONE" send RGB set to arduino
         /// or send name of effect
         /// </summary>
-        private void send_To_Arduino() {
+        private void SendToArduino() {
 
             if (cbEffects.SelectedItem.ToString() == "NONE" )
             {
@@ -268,7 +261,7 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Opens serial port to arduino.
         /// </summary>
-        private void init() {
+        private void Init() {
             Arduino.BaudRate = 9600; 
             try
                 {
@@ -294,36 +287,19 @@ namespace WindowsFormsApp2
         }
 
         /// <summary>
-        /// Sets position and opens ArduinoEr form to manually set COM port.
-        /// </summary>
-        private void pictureBox9_MouseClick(object sender, MouseEventArgs e)
-        {
-            ArduinoEr com = new ArduinoEr();
-            com.ShowInTaskbar = false;
-            this.Enabled = false;
-            com.StartPosition = FormStartPosition.Manual;
-            com.SetDesktopLocation(this.Left + 190, this.Top + 180);
-            com.Show();
-            if (com.Created == false)
-                this.Enabled = true;
-            com.FormClosed += (o, args) => { if (com.get_Text().Length > 0) { Arduino.Close(); Arduino.PortName = com.get_Text(); init(); } this.Enabled = true; };
-        }
-
-        /// <summary>
         /// When text is changed, sends message to arduino if port is open.
         /// </summary>
         private void tbColorCode_TextChanged(object sender, EventArgs e)
         {
             if (Arduino.IsOpen)
             {
-                send_To_Arduino();
+                SendToArduino();
                 cbEffects.SelectedItem = "NONE";
             }
             else
                 MessageBox.Show("PORT IS NOT OPEN PLEASE CHECK SETED PORT!!!");
         }
 
-       
         /// <summary>
         /// Closes form.
         /// </summary>
@@ -353,41 +329,35 @@ namespace WindowsFormsApp2
         /// <summary>
         /// Change text in textbox1.
         /// </summary>
-        private void pictureBox8_MouseUp(object sender, MouseEventArgs e)
+        private void colorPicker_MouseUp(object sender, MouseEventArgs e)
         {
             tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
+            tbRed.Value = pixel.R;
+            tbGreen.Value = pixel.G;
+            tbBlue.Value = pixel.B;
         }
 
         /// <summary>
         /// Set position of the sliders
         /// </summary>
-        private void pictureBox8_MouseClick(object sender, MouseEventArgs e)
+        private void colorPicker_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                Bitmap imp = new Bitmap(pictureBox8.Image);
-                if (e.X > 0 && e.Y > 0 && e.X < pictureBox8.Width && e.Y < pictureBox8.Height)
+                Bitmap imp = new Bitmap(colorPicker.Image);
+                if (e.X > 0 && e.Y > 0 && e.X < colorPicker.Width && e.Y < colorPicker.Height)
                 {
-                    Color pixel = imp.GetPixel(e.X, e.Y);
+                    pixel = imp.GetPixel(e.X, e.Y);
                     tbRed.Value = pixel.R;
                     tbGreen.Value = pixel.G;
                     tbBlue.Value = pixel.B;
                     ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
-                    tbRed.Invalidate();
-                    tbGreen.Invalidate();
-                    tbBlue.Invalidate();
                 }
             }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            //TODO add move method;
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -416,13 +386,11 @@ namespace WindowsFormsApp2
         {
             tbColorCode.Text = "#" + tbRed.Value.ToString("X2") + tbGreen.Value.ToString("X2") + tbBlue.Value.ToString("X2");
             ChangeColor(tbRed.Value, tbGreen.Value, tbBlue.Value);
-
         }
 
         private void cInfoButton1_Click(object sender, EventArgs e)
         {
             //MEMORY!!!
-          
                 Info info = new Info();
                 info.ShowInTaskbar = false;
                 this.Enabled = false;
