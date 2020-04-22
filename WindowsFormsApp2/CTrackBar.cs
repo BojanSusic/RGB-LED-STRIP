@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
     class CTrackBar: Control
     {
 
-        public int thumbOffset = 100;
+        public int value = 100;
         private Rectangle Thumb;
         private bool mouseDown = false;
         private int maximum;
@@ -36,22 +36,22 @@ namespace WindowsFormsApp2
             set { maximum = value; }
         }
 
+      /*  public int Value
+        {
+            get { return value; }
+            set { value = this.value; }
+        }*/
         public int Value
         {
-            get { return thumbOffset; }
-            set { thumbOffset = value; }
-        }
-        private int ThumbOffset
-        {
-            get { return thumbOffset; }
+            get { return value; }
             set
             {
                 if (value < 0)
-                    thumbOffset = 0;
+                    value = 0;
                 else if (value > Maximum)
-                    thumbOffset = Maximum;
+                    value = Maximum;
                 else
-                    thumbOffset = value;
+                    this.value =value;
 
                 if (ValueChanged != null) ValueChanged(this, new EventArgs());
             }
@@ -90,7 +90,7 @@ namespace WindowsFormsApp2
         {
             base.OnClick(e);
             MouseEventArgs arg = (MouseEventArgs)e;
-            this.ThumbOffset = arg.Location.X - 6;
+            this.value = arg.Location.X - 6;
             this.Invalidate();
         }
         protected override void OnMouseDown(MouseEventArgs e)
@@ -107,7 +107,7 @@ namespace WindowsFormsApp2
             if (mouseDown)
             {
                 MouseEventArgs arg = (MouseEventArgs)e;
-                this.ThumbOffset = arg.Location.X - 6;
+                this.Value = arg.Location.X - 6;
                 this.Invalidate();
             }
         }
@@ -115,18 +115,18 @@ namespace WindowsFormsApp2
         {
             if (e.KeyCode == Keys.Right)
             {
-                this.ThumbOffset += 5;
+                this.Value += 5;
             }
             else if (e.KeyCode == Keys.Left)
             {
-                this.ThumbOffset -= 5;
+                this.Value -= 5;
             }
             this.Invalidate();
         }
         private void Inicijalizacija()
         {
             Thumb.Size = new Size(7, this.Height);
-            Thumb.Location = Point.Round(new PointF(0 + ThumbOffset, 0));
+            Thumb.Location = Point.Round(new PointF(0 + Value, 0));
         }
     }
 }
