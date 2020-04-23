@@ -35,7 +35,6 @@
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profiles = new System.Windows.Forms.TabPage();
-            this.cInfoButton1 = new WindowsFormsApp2.CInfoButton();
             this.pnlProfiles = new System.Windows.Forms.Panel();
             this.btnProf20 = new System.Windows.Forms.Button();
             this.btnProf10 = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.btnProf11 = new System.Windows.Forms.Button();
             this.btnProf2 = new System.Windows.Forms.Button();
             this.btnProf1 = new System.Windows.Forms.Button();
+            this.cInfoButton1 = new WindowsFormsApp2.CInfoButton();
             this.home = new System.Windows.Forms.TabPage();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.tbBlue = new WindowsFormsApp2.CTrackBar();
@@ -123,8 +123,8 @@
             // profiles
             // 
             this.profiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.profiles.Controls.Add(this.cInfoButton1);
             this.profiles.Controls.Add(this.pnlProfiles);
+            this.profiles.Controls.Add(this.cInfoButton1);
             this.profiles.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profiles.ForeColor = System.Drawing.Color.Lime;
             this.profiles.Location = new System.Drawing.Point(4, 39);
@@ -134,17 +134,6 @@
             this.profiles.Size = new System.Drawing.Size(650, 472);
             this.profiles.TabIndex = 1;
             this.profiles.Text = "PROFILES";
-            // 
-            // cInfoButton1
-            // 
-            this.cInfoButton1.BorderColor = System.Drawing.Color.Red;
-            this.cInfoButton1.Location = new System.Drawing.Point(618, 91);
-            this.cInfoButton1.Name = "cInfoButton1";
-            this.cInfoButton1.Size = new System.Drawing.Size(41, 205);
-            this.cInfoButton1.TabIndex = 15;
-            this.cInfoButton1.Text = "cInfoButton1";
-            this.cInfoButton1.UseVisualStyleBackColor = true;
-            this.cInfoButton1.Click += new System.EventHandler(this.cInfoButton1_Click);
             // 
             // pnlProfiles
             // 
@@ -455,6 +444,20 @@
             this.btnProf1.UseVisualStyleBackColor = true;
             this.btnProf1.Click += new System.EventHandler(this.button00_Click);
             // 
+            // cInfoButton1
+            // 
+            this.cInfoButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.cInfoButton1.BorderColor = System.Drawing.Color.Red;
+            this.cInfoButton1.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cInfoButton1.ForeColor = System.Drawing.Color.Lime;
+            this.cInfoButton1.Location = new System.Drawing.Point(608, 150);
+            this.cInfoButton1.Name = "cInfoButton1";
+            this.cInfoButton1.Size = new System.Drawing.Size(41, 205);
+            this.cInfoButton1.TabIndex = 15;
+            this.cInfoButton1.Text = "i";
+            this.cInfoButton1.UseVisualStyleBackColor = false;
+            this.cInfoButton1.Click += new System.EventHandler(this.cInfoButton1_Click);
+            // 
             // home
             // 
             this.home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -674,7 +677,7 @@
             this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.btnMinimize.Font = new System.Drawing.Font("MV Boli", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnMinimize.Location = new System.Drawing.Point(548, 25);
+            this.btnMinimize.Location = new System.Drawing.Point(547, 25);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Side = WindowsFormsApp2.Side.RIGHT;
             this.btnMinimize.Size = new System.Drawing.Size(57, 31);
